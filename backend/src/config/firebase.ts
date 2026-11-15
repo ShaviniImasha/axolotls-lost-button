@@ -1,7 +1,3 @@
-/**
- * Backend Firebase Configuration
- */
-
 import { firebaseAdminService } from '../services/FirebaseAdminService';
 
 export const getAdminAuth = () => firebaseAdminService.getAuth();

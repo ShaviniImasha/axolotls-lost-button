@@ -1,8 +1,3 @@
-/**
- * Game Controller
- * Backend MVC - Controller Layer
- */
-
 import type { Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/authenticationMiddleware';
 import { GameModel } from '../models/GameModel';

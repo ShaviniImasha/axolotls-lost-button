@@ -1,8 +1,3 @@
-/**
- * Environment Configuration
- * Backend Layer
- */
-
 import dotenv from 'dotenv';
 dotenv.config();
 

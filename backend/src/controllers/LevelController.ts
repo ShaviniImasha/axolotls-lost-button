@@ -1,8 +1,3 @@
-/**
- * Level Controller
- * Backend MVC - Controller Layer
- */
-
 import type { Request, Response } from 'express';
 import { LevelModel } from '../models/LevelModel';
 

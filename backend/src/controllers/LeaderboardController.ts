@@ -1,8 +1,3 @@
-/**
- * Leaderboard Controller
- * Backend MVC - Controller Layer
- */
-
 import type { Request, Response } from 'express';
 import { leaderboardRepository } from '../repositories/LeaderboardRepository';
 

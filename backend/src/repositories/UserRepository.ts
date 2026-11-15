@@ -1,16 +1,10 @@
-/**
- * User Repository
- * Backend Repository Layer
- * Interacts with Firestore 'players' collection via Firebase Admin SDK.
- */
-
 import { getAdminDb } from '../config/firebase';
 import type { UserAttributes } from '../models/UserModel';
 
 export class UserRepository {
   private static instance: UserRepository;
 
-  private constructor() {}
+  private constructor() { }
 
   public static getInstance(): UserRepository {
     if (!UserRepository.instance) {

@@ -1,8 +1,3 @@
-/**
- * Object Controller
- * Backend MVC - Controller Layer
- */
-
 import type { Request, Response } from 'express';
 
 export class ObjectController {
