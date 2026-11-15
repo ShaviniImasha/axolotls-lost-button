@@ -51,7 +51,6 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
             <span class="chapter-mark">THREE REALMS. THREE CHALLENGES EACH.</span>
             <h1>Where to, Pip?</h1>
             <p>Every realm can be explored at Easy, Medium, or Hard.</p>
-            <p class="level-unlock-rules">Easy opens with the first realm. Beat each realm’s Easy to open its Medium, then beat Medium to open Hard. The next realm’s Easy opens after the previous realm’s Easy.</p>
           </div>
 
           <div class="pond-selection-grid">
