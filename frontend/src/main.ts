@@ -49,6 +49,66 @@ let authSuccessMessage: string | null = null;
 let isResetMode = false;
 let isSettingsModalOpen = false;
 
+type PondSettings = {
+  oceanAmbience: boolean;
+  floatingBubbles: boolean;
+  reducedMotion: boolean;
+  pipGuidance: boolean;
+  relaxedTimer: boolean;
+};
+
+const DEFAULT_POND_SETTINGS: PondSettings = {
+  oceanAmbience: true,
+  floatingBubbles: true,
+  reducedMotion: false,
+  pipGuidance: true,
+  relaxedTimer: false,
+};
+const POND_SETTINGS_STORAGE_KEY = 'axolotl-pond-settings';
+
+function getPondSettings(): PondSettings {
+  try {
+    const saved = JSON.parse(localStorage.getItem(POND_SETTINGS_STORAGE_KEY) || 'null') as Partial<PondSettings> | null;
+    return { ...DEFAULT_POND_SETTINGS, ...(saved || {}) };
+  } catch {
+    return { ...DEFAULT_POND_SETTINGS };
+  }
+}
+
+function applyPondSettings(): void {
+  const settings = getPondSettings();
+  document.body.classList.toggle('pond-reduced-motion', settings.reducedMotion);
+  document.body.classList.toggle('pond-hide-bubbles', !settings.floatingBubbles);
+  document.body.classList.toggle('pond-calm-water', !settings.oceanAmbience);
+}
+
+function syncPondSettingsPanel(): void {
+  const settings = getPondSettings();
+  const controls: Array<[keyof PondSettings, string]> = [
+    ['oceanAmbience', 'toggle-ocean'],
+    ['floatingBubbles', 'toggle-bubbles'],
+    ['reducedMotion', 'toggle-motion'],
+    ['pipGuidance', 'toggle-guidance'],
+    ['relaxedTimer', 'toggle-timer'],
+  ];
+  for (const [key, id] of controls) {
+    const button = document.getElementById(id);
+    if (!button) continue;
+    button.classList.toggle('off', !settings[key]);
+    button.setAttribute('aria-checked', String(settings[key]));
+  }
+}
+
+function togglePondSetting(key: keyof PondSettings): void {
+  const settings = getPondSettings();
+  settings[key] = !settings[key];
+  localStorage.setItem(POND_SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+  applyPondSettings();
+  syncPondSettingsPanel();
+}
+
+applyPondSettings();
+
 // Preload SVG assets
 async function preloadArtwork(): Promise<void> {
   artError = '';
@@ -539,6 +599,42 @@ app.addEventListener('click', async (event) => {
     case 'open-settings':
       isSettingsModalOpen = true;
       render();
+      break;
+
+    case 'toggle-pond-settings': {
+      const panel = document.getElementById('pond-settings-panel');
+      if (!panel) break;
+      const isOpen = panel.getAttribute('aria-hidden') !== 'false';
+      panel.style.display = isOpen ? 'grid' : 'none';
+      panel.setAttribute('aria-hidden', String(!isOpen));
+      if (isOpen) syncPondSettingsPanel();
+      break;
+    }
+
+    case 'toggle-ocean':
+      togglePondSetting('oceanAmbience');
+      break;
+
+    case 'toggle-bubbles':
+      togglePondSetting('floatingBubbles');
+      break;
+
+    case 'toggle-motion':
+      togglePondSetting('reducedMotion');
+      break;
+
+    case 'toggle-guidance':
+      togglePondSetting('pipGuidance');
+      break;
+
+    case 'toggle-timer':
+      togglePondSetting('relaxedTimer');
+      break;
+
+    case 'reset-pond-settings':
+      localStorage.setItem(POND_SETTINGS_STORAGE_KEY, JSON.stringify(DEFAULT_POND_SETTINGS));
+      applyPondSettings();
+      syncPondSettingsPanel();
       break;
 
     case 'close-settings':

@@ -11,7 +11,7 @@ export interface FishPuzzleData {
 
 export class FishApiService {
   private static instance: FishApiService;
-  private readonly apiUrl = 'https://marcconrad.com/uob/fish/api.php?out=json';
+  private readonly apiUrl = 'https://marcconrad.com/uob/fish/api.php?out=json&base64=yes';
 
   private constructor() {}
 
@@ -39,7 +39,12 @@ export class FishApiService {
 
       const data = (await response.json()) as { question?: string; solution?: number; chest?: number; fish?: number };
       const solution = typeof data.solution === 'number' ? data.solution : typeof data.fish === 'number' ? data.fish : 0;
-      const imageUrl = data.question || '';
+      const rawQuestion = data.question || '';
+      const imageUrl = rawQuestion.startsWith('data:image/')
+        ? rawQuestion
+        : /^[A-Za-z0-9+/]+=*$/.test(rawQuestion) && rawQuestion.length > 100
+          ? `data:image/png;base64,${rawQuestion}`
+          : rawQuestion;
 
       if (!imageUrl || solution < 0 || solution > 9) {
         throw new Error('Invalid payload from Fish API');
@@ -47,21 +52,8 @@ export class FishApiService {
 
       return { imageUrl, solution };
     } catch (err) {
-      console.warn('[Backend FishApiService] External API error, serving fallback:', err);
-      return this.getFallbackPuzzle();
+      throw new Error(`Fish API request failed: ${err instanceof Error ? err.message : String(err)}`);
     }
-  }
-
-  /**
-   * Offline / fallback riddles
-   */
-  public getFallbackPuzzle(): FishPuzzleData {
-    const fallbacks: FishPuzzleData[] = [
-      { imageUrl: 'https://marcconrad.com/uob/fish/images/1.png', solution: 3 },
-      { imageUrl: 'https://marcconrad.com/uob/fish/images/2.png', solution: 5 },
-      { imageUrl: 'https://marcconrad.com/uob/fish/images/3.png', solution: 7 },
-    ];
-    return fallbacks[Math.floor(Math.random() * fallbacks.length)];
   }
 
   /**

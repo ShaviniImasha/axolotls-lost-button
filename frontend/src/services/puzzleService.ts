@@ -28,17 +28,7 @@ export class PuzzleService {
    * Request a fish puzzle challenge from backend
    */
   public async getPuzzleChallenge(optionCount = 4): Promise<BackendPuzzleResponse> {
-    try {
-      const data = await ApiClient.get<BackendPuzzleResponse>(`/puzzles/challenge?optionCount=${optionCount}`);
-      return data;
-    } catch (err) {
-      console.warn('[Frontend PuzzleService] Backend challenge error, using fallback:', err);
-      return {
-        imageUrl: 'https://marcconrad.com/uob/fish/images/1.png',
-        options: [1, 2, 3, 5],
-        solution: 3,
-      };
-    }
+    return ApiClient.get<BackendPuzzleResponse>(`/puzzles/challenge?optionCount=${optionCount}`);
   }
 
   /**

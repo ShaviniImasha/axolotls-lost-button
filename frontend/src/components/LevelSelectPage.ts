@@ -103,15 +103,6 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
             <img src="${assetUrl('icon-home')}" alt="" class="mini-icon"><span>BACK TO PIP</span>
           </button>
 
-          ${() => {
-            const firstUnlocked = ADVENTURE_LEVELS.filter((l) => unlockedLevels.includes(l.id))[0];
-            if (!firstUnlocked) return '';
-            return `
-            <button class="game-button coral-button dive-in-btn" data-action="play-level" data-level-id="${firstUnlocked.id}" aria-label="Dive into ${firstUnlocked.realm.name} ${capitalize(firstUnlocked.difficulty)}">
-              <span>DIVE IN</span>
-            </button>
-            `;
-          }}()
         </section>
       </section>
     </main>

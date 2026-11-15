@@ -23,15 +23,12 @@ describe('Backend MVC REST API', () => {
     expect(easyPond?.chestCombination).toEqual([3, 5, 2]);
   });
 
-  it('FishApiService generates options and returns puzzle data', async () => {
+  it('FishApiService generates answer options for API puzzles', async () => {
     const { fishApiService } = await import('../../backend/src/services/FishApiService');
     const options = fishApiService.generateOptions(5, 4);
     expect(options.length).toBe(4);
     expect(options.includes(5)).toBe(true);
-
-    const fallback = fishApiService.getFallbackPuzzle();
-    expect(fallback.imageUrl).toBeDefined();
-    expect(typeof fallback.solution).toBe('number');
+    expect(fishApiService.fetchPuzzle).toBeTypeOf('function');
   });
 
   it('GameModel validates chest codes correctly', async () => {

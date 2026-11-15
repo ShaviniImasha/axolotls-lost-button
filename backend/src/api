@@ -1,4 +1,4 @@
-export const FISH_API_URL = 'https://marcconrad.com/uob/fish/api.php?out=json';
+export const FISH_API_URL = 'https://marcconrad.com/uob/fish/api.php?out=json&base64=yes';
 
 interface FishApiPayload {
   question: string;
@@ -43,6 +43,16 @@ function parsePuzzle(payload: unknown): FishPuzzle {
     !Number.isInteger(chest)
   ) {
     throw new FishApiError('The puzzle service returned an incomplete puzzle.', 'invalid-response');
+  }
+
+  if (question.startsWith('data:image/')) {
+    return { imageUrl: question, solution: fish };
+  }
+
+  // The documented base64 response may contain the raw image payload rather
+  // than a data-URL prefix. Fish puzzles are PNG images.
+  if (/^[A-Za-z0-9+/]+=*$/.test(question) && question.length > 100) {
+    return { imageUrl: `data:image/png;base64,${question}`, solution: fish };
   }
 
   let image: URL;

@@ -29,7 +29,7 @@ export class PuzzleController {
   public async loadNewChallenge(): Promise<void> {
     this.puzzleModel.setLoading(true);
     try {
-      const puzzle = await fishApiService.getPuzzle();
+      const puzzle = await fishApiService.fetchPuzzle();
       this.puzzleModel.setPuzzle(puzzle);
     } catch {
       this.puzzleModel.setError('Pip could not reach the fish teacher. Try again!');

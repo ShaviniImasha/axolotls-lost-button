@@ -10,17 +10,16 @@ export const puzzleRoutes = Router();
 
 puzzleRoutes.get('/challenge', async (_req, res) => {
   try {
-    const puzzle = await fishApiService.getPuzzle();
+    const puzzle = await fishApiService.fetchPuzzle();
     const options = fishApiService.generateOptions(puzzle.solution, 4);
     res.json({
       imageUrl: puzzle.imageUrl,
       options,
+      solution: puzzle.solution,
     });
   } catch (error) {
-    const fallback = fishApiService.getOfflineFallback();
-    res.json({
-      imageUrl: fallback.imageUrl,
-      options: [1, 2, 3, 5],
+    res.status(502).json({
+      error: error instanceof Error ? error.message : 'Fish API is unavailable.',
     });
   }
 });
