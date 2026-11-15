@@ -1,9 +1,3 @@
-/**
- * Auth Controller
- * Model-View-Controller (MVC) - Controller Layer
- * Coordinates authentication events, credential verification, and user state synchronization.
- */
-
 import { UserModel } from '../models/UserModel';
 import { userRepository } from '../repositories/UserRepository';
 import { Validation } from '../utils/Validation';

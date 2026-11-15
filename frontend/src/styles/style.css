@@ -6338,6 +6338,7 @@ input:focus-visible {
 .trail-pearl img { width: 29px; height: 29px; object-fit: contain; filter: grayscale(.8) opacity(.48); }
 .trail-pearl.collected img { filter: drop-shadow(0 2px 1px #bd984c); }
 .trail-pearl b { position: absolute; top: 1px; right: 0; display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid #fff9eb; border-radius: 50%; background: #72bd83; color: white; font-size: .58rem; line-height: 1; }
+.trail-pearl b.trail-done::before { content: ""; position: absolute; left: 5px; top: 2px; width: 4px; height: 7px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
 .lobby-goal {
   position: absolute;

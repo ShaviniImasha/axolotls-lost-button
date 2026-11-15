@@ -6338,6 +6338,7 @@ input:focus-visible {
 .trail-pearl img { width: 29px; height: 29px; object-fit: contain; filter: grayscale(.8) opacity(.48); }
 .trail-pearl.collected img { filter: drop-shadow(0 2px 1px #bd984c); }
 .trail-pearl b { position: absolute; top: 1px; right: 0; display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid #fff9eb; border-radius: 50%; background: #72bd83; color: white; font-size: .58rem; line-height: 1; }
+.trail-pearl b.trail-done::before { content: ""; position: absolute; left: 5px; top: 2px; width: 4px; height: 7px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
 .lobby-goal {
   position: absolute;
@@ -6762,6 +6763,13 @@ input:focus-visible {
   box-shadow: 0 4px 0 #b3c5e6;
 }
 .btn-settings:hover { box-shadow: 0 6px 0 #b3c5e6; }
+
+.btn-edit-profile {
+  background: #eef2fb;
+  color: #3b588c;
+  box-shadow: 0 4px 0 #b3c5e6;
+}
+.btn-edit-profile:hover { box-shadow: 0 6px 0 #b3c5e6; }
 
 .btn-nap {
   background: #ffe6ed;
@@ -7524,3 +7532,380 @@ body.reduce-motion * {
 
 
 
+
+/* Edit Profile Modal */
+.edit-profile-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.edit-profile-card {
+  background: var(--hud-glass);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  max-width: 400px;
+  width: 90%;
+  color: #fff;
+}
+.edit-profile-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.edit-profile-section {
+  margin-bottom: 1rem;
+}
+.edit-profile-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+.edit-profile-input {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #555;
+  border-radius: 0.3rem;
+  background: #fff;
+  color: #000;
+}
+.edit-profile-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.edit-save-btn, .edit-close-btn {
+  flex-shrink: 0;
+  background: var(--gold);
+  color: #000;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.edit-profile-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  min-height: 1.2rem;
+}
+
+/* Soft pastel theme for profile edit UI */
+:root {
+  --pastel-bg: #f0f9ff;
+  --pastel-card: #e6f7ff;
+  --pastel-primary: #a0d8ef;
+  --pastel-accent: #ffd9c0;
+  --pastel-text: #333333;
+}
+
+.edit-profile-panel {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: rgba(100, 180, 200, 0.35);
+  backdrop-filter: blur(6px);
+}
+
+.edit-profile-card {
+  width: min(420px, 92vw);
+  padding: 28px 26px 24px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fefcff, #f5f0ff);
+  border: 2px solid #e8d9ff;
+  box-shadow: 0 20px 50px rgba(120, 80, 180, 0.15), 0 6px 0 #d9c7f7;
+  animation: modal-in .3s cubic-bezier(.15,.9,.3,1.2) both;
+}
+
+.edit-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.edit-profile-emoji { font-size: 1.3rem; }
+
+.edit-profile-title {
+  margin: 0;
+  color: #7c5cbf;
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.edit-profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1.5px solid #ede0ff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(140, 100, 220, 0.07);
+}
+
+.edit-profile-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #9b7dd4;
+}
+
+.edit-profile-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-profile-input {
+  flex: 1;
+  padding: 9px 13px;
+  border: 1.5px solid #ddd0f8;
+  border-radius: 12px;
+  background: #faf7ff;
+  color: #4a3870;
+  font-size: 0.85rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.edit-profile-input:focus {
+  border-color: #b59df0;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(181, 157, 240, 0.2);
+}
+
+.edit-profile-input.edit-profile-confirm {
+  margin-top: 4px;
+}
+
+.edit-save-btn {
+  background: #c8a7f5 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  padding: 9px 16px !important;
+  font-weight: 800 !important;
+  font-size: 0.78rem !important;
+  box-shadow: 0 4px 0 #a67ee0 !important;
+  white-space: nowrap;
+  transition: transform 0.15s, box-shadow 0.15s !important;
+}
+
+.edit-save-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 0 #a67ee0 !important;
+}
+
+.btn-change-pw {
+  align-self: flex-start;
+  background: #f9c8e0 !important;
+  color: #8c3b5f !important;
+  box-shadow: 0 4px 0 #e8a0c0 !important;
+}
+
+.btn-change-pw:hover {
+  box-shadow: 0 6px 0 #e8a0c0 !important;
+}
+
+.edit-close-btn {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  background: transparent !important;
+  color: #a08cce !important;
+  border: 1.5px solid #d9c8f5 !important;
+  border-radius: 14px !important;
+  padding: 10px !important;
+  font-weight: 700 !important;
+  font-size: 0.82rem !important;
+  box-shadow: none !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.edit-close-btn:hover {
+  background: #f0e8ff !important;
+  color: #7c5cbf !important;
+}
+
+.edit-profile-status {
+  margin: 8px 0 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  color: #9b7dd4;
+  min-height: 18px;
+}
+
+
+.edit-profile-status {
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: var(--pastel-primary);
+}
+
+
+/* ==========================================================================
+   Cute Inline Account Settings (Username & Email) Below Stats Cards
+   ========================================================================== */
+.profile-account-settings-card {
+  margin-top: 18px;
+  padding: 18px 20px 16px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #ffffff 0%, #fbf9ff 60%, #f4fdfa 100%);
+  border: 3px solid #ffffff;
+  box-shadow: 0 6px 0 #dbe6df, 0 10px 24px rgba(20, 80, 95, 0.08);
+}
+
+.profile-account-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.account-pill-tag {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #176547;
+  background: #d4f7e5;
+  border: 1.5px solid #a8eec7;
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+.profile-account-title {
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #4a6d7c;
+  letter-spacing: -0.02em;
+}
+
+.profile-settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .profile-settings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profile-mini-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.03);
+}
+
+.box-username {
+  background: linear-gradient(135deg, #fff7fa 0%, #fff0f5 100%);
+  border-color: #ffd8e6;
+}
+
+.box-email {
+  background: linear-gradient(135deg, #f0faff 0%, #e8f5fc 100%);
+  border-color: #cdeaf8;
+}
+
+.mini-box-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2b565d;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.box-icon {
+  font-size: 1rem;
+}
+
+.profile-input-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-inline-input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 12px;
+  border: 2px solid #e1ecf0;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #2b565d;
+  font-size: 0.82rem;
+  font-weight: 600;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.profile-inline-input:focus {
+  border-color: #79c9bb;
+  box-shadow: 0 0 0 3px rgba(121, 201, 187, 0.2);
+}
+
+.password-confirm-field {
+  margin-top: 2px;
+  font-size: 0.76rem;
+}
+
+.save-pill-btn {
+  padding: 8px 16px !important;
+  border-radius: 14px !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  cursor: pointer;
+  border: none !important;
+  flex-shrink: 0;
+}
+
+.box-username .save-pill-btn {
+  background: linear-gradient(135deg, #ffb3c6, #f07e9c) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 0 #cc5876 !important;
+}
+
+.box-username .save-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #cc5876 !important;
+}
+
+.box-email .save-pill-btn {
+  background: linear-gradient(135deg, #7ad4e4, #52bad0) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 0 #3d9bb0 !important;
+}
+
+.box-email .save-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 #3d9bb0 !important;
+}
+
+.edit-profile-status {
+  margin: 10px 0 0;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-align: center;
+  min-height: 18px;
+  color: #176547;
+}

@@ -1,9 +1,3 @@
-/**
- * Auth Controller
- * Model-View-Controller (MVC) - Controller Layer
- * Coordinates authentication events, credential verification, and user state synchronization.
- */
-
 import { UserModel } from '../models/UserModel';
 import { userRepository } from '../repositories/UserRepository';
 import { Validation } from '../utils/Validation';
@@ -49,9 +43,8 @@ export class AuthController {
     });
   }
 
-  /**
-   * Handle user login
-   */
+  //handle user login
+
   public async handleLogin(credentials: AuthCredentials): Promise<{ success: boolean; user?: UserModel; error?: string }> {
     const validation = Validation.validateLogin(credentials);
     if (!validation.isValid) {
@@ -72,9 +65,8 @@ export class AuthController {
     }
   }
 
-  /**
-   * Handle user registration
-   */
+  //Handle user registration
+
   public async handleRegister(credentials: AuthCredentials): Promise<{ success: boolean; user?: UserModel; error?: string }> {
     const validation = Validation.validateRegistration(credentials);
     if (!validation.isValid) {
@@ -95,9 +87,8 @@ export class AuthController {
     }
   }
 
-  /**
-   * Handle Google sign-in
-   */
+  //Handle Google sign-in
+
   public async handleGoogleSignIn(): Promise<{ success: boolean; user?: UserModel; error?: string }> {
     try {
       const player = await authService.loginWithGoogle();
@@ -112,9 +103,8 @@ export class AuthController {
     }
   }
 
-  /**
-   * Handle Guest explorer mode
-   */
+  //Handle Guest explorer mode
+
   public handleGuestMode(): UserModel {
     const player = authService.getCurrentUser() || {
       playerId: `guest-${Date.now()}`,

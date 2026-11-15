@@ -1,9 +1,3 @@
-/**
- * Game Controller (MVC)
- * Model-View-Controller (MVC) - Controller Layer
- * Coordinates active gameplay loop, timer ticks, hidden-object discovery, and chest unlocking.
- */
-
 import { GameModel, type GamePhase, type GameSessionState } from '../models/GameModel';
 import { ObjectController } from './ObjectController';
 import { ScoreController } from './ScoreController';

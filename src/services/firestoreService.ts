@@ -7,6 +7,7 @@ import {
   orderBy,
   query,
   setDoc,
+  updateDoc,
   where,
 } from 'firebase/firestore';
 import { db, isFirebaseConfigured } from '../firebase/config';
@@ -384,6 +385,12 @@ export class FirestoreService {
       console.warn('Could not fetch achievements:', err);
       return [];
     }
+  }
+
+  public async updatePlayerName(userId: string, newName: string): Promise<void> {
+    if (!isFirebaseConfigured || !db) return;
+    const ref = doc(db, 'players', userId);
+    await updateDoc(ref, { name: newName, updatedAt: new Date().toISOString() });
   }
 
   private async checkMilestoneAchievements(

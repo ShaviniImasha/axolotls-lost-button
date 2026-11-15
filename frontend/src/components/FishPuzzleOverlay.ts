@@ -97,7 +97,6 @@ export function renderFishPuzzleOverlay(props: FishPuzzleOverlayProps): string {
                 </div>
                 <button class="game-button coral-button next-fish" data-action="close-fish-puzzle">
                   <span>BACK TO THE POND</span>
-                  <span>→</span>
                 </button>
               `
               : puzzle.feedback === 'incorrect'

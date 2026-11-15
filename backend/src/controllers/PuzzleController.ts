@@ -1,18 +1,9 @@
-/**
- * Puzzle Controller
- * Backend MVC - Controller Layer
- * Handles Fish API riddle fetching, option distribution, and answer verification.
- */
-
 import type { Request, Response } from 'express';
 import { fishApiService } from '../services/FishApiService';
 import { PuzzleModel } from '../models/PuzzleModel';
 
 export class PuzzleController {
-  /**
-   * GET /api/puzzles/challenge
-   * Retrieves a new puzzle challenge with image and option choices
-   */
+
   public static async getChallenge(req: Request, res: Response): Promise<void> {
     try {
       const optionCount = Number(req.query.optionCount) === 6 ? 6 : Number(req.query.optionCount) === 10 ? 10 : 4;

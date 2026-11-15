@@ -82,7 +82,7 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
                           ${
                             isUnlocked
                               ? `<button class="game-button coral-button pond-difficulty-btn" data-action="play-level" data-level-id="${level.id}" aria-label="Play ${realm.name} ${difficultyLabel}">
-                                  <span>${isCompleted ? 'PLAY AGAIN' : 'PLAY'}</span><span>→</span>
+                                  <span>${isCompleted ? 'PLAY AGAIN' : 'PLAY'}</span>
                                 </button>`
                               : `<button class="game-button locked-btn pond-difficulty-btn" data-level-id="${level.id}" disabled aria-label="${difficultyLabel} locked">
                                   <img src="${assetUrl('icon-lock')}" alt="" class="mini-icon">
@@ -108,7 +108,7 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
             if (!firstUnlocked) return '';
             return `
             <button class="game-button coral-button dive-in-btn" data-action="play-level" data-level-id="${firstUnlocked.id}" aria-label="Dive into ${firstUnlocked.realm.name} ${capitalize(firstUnlocked.difficulty)}">
-              <span>DIVE IN</span><span>→</span>
+              <span>DIVE IN</span>
             </button>
             `;
           }}()

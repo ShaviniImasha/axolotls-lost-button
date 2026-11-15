@@ -137,7 +137,7 @@ export function renderHomePage(props: HomePageProps): string {
             ${isUnlocked ? '' : 'disabled'}
           >
             <span class="lobby-play-label">${isUnlocked ? playLabel : 'Unlock this level'}</span>
-            <span class="lobby-play-arrow" aria-hidden="true">➜</span>
+            <span class="lobby-play-arrow" aria-hidden="true">&gt;</span>
           </button>
 
           <div class="panel-goal-banner">
@@ -163,7 +163,7 @@ export function renderHomePage(props: HomePageProps): string {
                 return `
                   <span class="trail-pearl ${isLevelComplete ? 'collected' : ''}" aria-label="${level.realm.name} ${capitalize(level.difficulty)}: ${isLevelComplete ? 'complete' : 'not completed'}">
                     ${isLevelComplete
-                      ? `<img src="${assetUrl('treasure-chest')}" alt=""><b aria-hidden="true">✓</b>`
+                      ? `<img src="${assetUrl('treasure-chest')}" alt=""><b aria-hidden="true" class="trail-done"></b>`
                       : `<img src="${assetUrl('pearl')}" alt="">`}
                   </span>
                 `;

@@ -110,7 +110,6 @@ export function renderLeaderboardScreen(props: LeaderboardScreenProps): string {
 
           <button class="game-button coral-button leaderboard-back-button" data-action="go-home">
             <span>BACK TO PIP</span>
-            <span>→</span>
           </button>
         </section>
       </section>

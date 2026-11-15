@@ -92,7 +92,6 @@ export function renderLoginPage(props: LoginPageProps = {}): string {
                 <button class="play-button auth-submit" type="submit" style="margin-top:14px;">
                   <span class="play-gem"><img src="${assetUrl('icon-play')}" alt="Send"></span>
                   <span>SEND RESET LINK</span>
-                  <span class="play-arrow">→</span>
                 </button>
               </form>
 
@@ -122,7 +121,6 @@ export function renderLoginPage(props: LoginPageProps = {}): string {
                 <button class="play-button auth-submit" type="submit">
                   <span class="play-gem"><img src="${assetUrl('icon-play')}" alt="Play"></span>
                   <span>LET’S GO</span>
-                  <span class="play-arrow">→</span>
                 </button>
               </form>
 

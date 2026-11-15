@@ -34,7 +34,7 @@ export function renderSettingsModal(props: SettingsModalProps): string {
             </div>
           </div>
           <button class="settings-close-circle" data-action="close-settings" title="Close Settings" aria-label="Close Settings">
-            ✕
+            Close
           </button>
         </header>
 

@@ -67,7 +67,6 @@ export function renderRegisterPage(props: RegisterPageProps = {}): string {
             <button class="play-button auth-submit" type="submit">
               <span class="play-gem"><img src="${assetUrl('icon-heart')}" alt="Heart"></span>
               <span>LET’S PLAY</span>
-              <span class="play-arrow">→</span>
             </button>
           </form>
 

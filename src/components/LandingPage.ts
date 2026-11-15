@@ -32,7 +32,7 @@ export function renderLandingPage(): string {
             <button class="play-button" data-action="go-login">
               <span class="play-gem"><img src="${assetUrl('icon-play')}" alt="Play"></span>
               <span>LET’S DIVE IN</span>
-              <span class="play-arrow">→</span>
+
             </button>
             <button class="start-sign-up" data-action="go-register">
               NEW HERE? <strong>CREATE ACCOUNT</strong>
