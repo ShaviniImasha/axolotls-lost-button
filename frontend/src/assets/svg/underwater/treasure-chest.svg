@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Magical treasure chest">
+<!-- Chest shadow -->
+  <ellipse cx="130" cy="232" rx="94" ry="14" fill="#E0B84F" opacity=".3"/>
+
+  <!-- Chest lower body -->
+  <rect x="38" y="150" width="184" height="82" rx="16" fill="#FFF0A8" stroke="#E0B84F" stroke-width="4"/>
+
+  <!-- Chest lid -->
+  <path d="M38 150 C38 104 222 104 222 150 Z" fill="#FFF0A8" stroke="#E0B84F" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Lid dome top -->
+  <path d="M44 148 C44 112 216 112 216 148" fill="#FFD9B8" stroke="#E39A66" stroke-width="3"/>
+
+  <!-- Wood plank lines on chest body -->
+  <path d="M38 170 H222 M38 190 H222 M38 210 H222" fill="none" stroke="#FFE070" stroke-width="3.5" opacity=".5"/>
+  <!-- Wood plank lines on lid -->
+  <path d="M56 134 Q130 126 204 134 M70 146 Q130 138 190 146" fill="none" stroke="#FFE070" stroke-width="3" opacity=".5"/>
+
+  <!-- Iron band straps -->
+  <rect x="38" y="146" width="184" height="14" rx="4" fill="#9B85D9" stroke="#BBA5F5" stroke-width="2.5" opacity=".8"/>
+  <rect x="38" y="224" width="184" height="10" rx="4" fill="#9B85D9" stroke="#BBA5F5" stroke-width="2.5" opacity=".7"/>
+  <!-- Vertical strap -->
+  <rect x="118" y="104" width="24" height="128" rx="5" fill="#9B85D9" stroke="#BBA5F5" stroke-width="2.5" opacity=".75"/>
+
+  <!-- Lock plate -->
+  <rect x="110" y="147" width="40" height="30" rx="10" fill="#FFE070" stroke="#E0B84F" stroke-width="3"/>
+  <!-- Lock keyhole -->
+  <circle cx="130" cy="157" r="6" fill="#4A3347"/>
+  <path d="M126 163 L134 163 L132 172 L128 172 Z" fill="#4A3347"/>
+  <circle cx="128" cy="156" r="2" fill="#FFFFFF" opacity=".5"/>
+
+  <!-- Lid shine -->
+  <path d="M72 120 Q104 108 152 112" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity=".6"/>
+  <circle cx="164" cy="114" r="4" fill="#FFFFFF" opacity=".6"/>
+
+  <!-- Kawaii face on chest -->
+  <circle cx="96" cy="194" r="8" fill="#4A3347"/>
+  <circle cx="99" cy="191" r="3" fill="#FFFFFF"/>
+  <circle cx="164" cy="194" r="8" fill="#4A3347"/>
+  <circle cx="167" cy="191" r="3" fill="#FFFFFF"/>
+  <ellipse cx="80" cy="210" rx="11" ry="7" fill="#FF8FA9" opacity=".6"/>
+  <ellipse cx="180" cy="210" rx="11" ry="7" fill="#FF8FA9" opacity=".6"/>
+  <path d="M120 208 Q130 218 140 208" fill="none" stroke="#4A3347" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Magical sparkle aura -->
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(36 44) scale(1.2)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(218 52) scale(1.5)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(36 192) scale(0.9)" fill="#FFC1D6" stroke="#D9769A" stroke-width="2.8" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(222 194) scale(1)" fill="#D7C6FF" stroke="#9B85D9" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(128 30) scale(0.85)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.9" stroke-linejoin="round"/>
+</svg>

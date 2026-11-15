@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="The magical lost button">
+<!-- Radiant golden celestial aura -->
+  <circle cx="128" cy="128" r="96" fill="#FFF0A8" opacity=".2"/>
+  <circle cx="128" cy="128" r="88" fill="#FFC1D6" opacity=".25"/>
+
+  <!-- Main pearlescent button body with rim -->
+  <g stroke="#D9769A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer button border -->
+    <circle cx="128" cy="128" r="78" fill="#FFC1D6"/>
+    <!-- Raised carved bevel ring -->
+    <circle cx="128" cy="128" r="66" fill="none" stroke="#FF9DBE" stroke-width="5"/>
+    <!-- Recessed soft cream button interior -->
+    <circle cx="128" cy="128" r="54" fill="#FFE3EC"/>
+  </g>
+
+  <!-- Sweet curved shine reflection on the rim -->
+  <path d="M78 84 A66 66 0 0 1 178 84" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".75"/>
+  <circle cx="184" cy="90" r="3.5" fill="#FFFFFF" opacity=".75"/>
+
+  <!-- Four symmetric button holes -->
+  
+      <circle cx="108" cy="108" r="9" fill="#4A3347"/>
+      <circle cx="108" cy="108" r="6.5" fill="#2E1B28"/>
+      <circle cx="106" cy="106" r="2.5" fill="#FFFFFF" opacity=".4"/>
+    
+      <circle cx="148" cy="108" r="9" fill="#4A3347"/>
+      <circle cx="148" cy="108" r="6.5" fill="#2E1B28"/>
+      <circle cx="146" cy="106" r="2.5" fill="#FFFFFF" opacity=".4"/>
+    
+      <circle cx="108" cy="148" r="9" fill="#4A3347"/>
+      <circle cx="108" cy="148" r="6.5" fill="#2E1B28"/>
+      <circle cx="106" cy="146" r="2.5" fill="#FFFFFF" opacity=".4"/>
+    
+      <circle cx="148" cy="148" r="9" fill="#4A3347"/>
+      <circle cx="148" cy="148" r="6.5" fill="#2E1B28"/>
+      <circle cx="146" cy="146" r="2.5" fill="#FFFFFF" opacity=".4"/>
+    
+
+  <!-- Magical star-flower cross thread stitching in pastel gold & cream -->
+  <path d="M108 108 L148 148 M148 108 L108 148" stroke="#FFE070" stroke-width="7" stroke-linecap="round"/>
+  <path d="M108 108 L148 148 M148 108 L108 148" stroke="#FFF0A8" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M108 108 L148 148 M148 108 L108 148" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+  <!-- Center golden thread knot -->
+  <circle cx="128" cy="128" r="5" fill="#E0B84F"/>
+  <circle cx="127" cy="127" r="2" fill="#FFFFFF"/>
+
+  <!-- Floating magical celestial sparkles -->
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(52 54) scale(1.2)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(204 62) scale(1.4)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(48 192) scale(0.95)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.6" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(206 194) scale(1.15)" fill="#FFC1D6" stroke="#D9769A" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(128 28) scale(0.8)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="3.1" stroke-linejoin="round"/>
+</svg>

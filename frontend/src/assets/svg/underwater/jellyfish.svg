@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Lavender jellyfish">
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M84 150 C70 176 98 196 84 222 C76 234 88 240 82 244" stroke="#9B85D9" stroke-width="14"/>
+    <path d="M84 150 C70 176 98 196 84 222 C76 234 88 240 82 244" stroke="#BBA5F5" stroke-width="8"/>
+    <path d="M108 150 C94 176 122 196 108 222 C100 234 112 240 106 244" stroke="#9B85D9" stroke-width="11"/>
+    <path d="M108 150 C94 176 122 196 108 222 C100 234 112 240 106 244" stroke="#BBA5F5" stroke-width="5"/>
+    <path d="M148 150 C134 176 162 196 148 222 C140 234 152 240 146 244" stroke="#9B85D9" stroke-width="11"/>
+    <path d="M148 150 C134 176 162 196 148 222 C140 234 152 240 146 244" stroke="#BBA5F5" stroke-width="5"/>
+    <path d="M172 150 C158 176 186 196 172 222 C164 234 176 240 170 244" stroke="#9B85D9" stroke-width="14"/>
+    <path d="M172 150 C158 176 186 196 172 222 C164 234 176 240 170 244" stroke="#BBA5F5" stroke-width="8"/>
+  </g>
+  <path d="M40 150 C34 70 78 28 128 28 C178 28 222 70 216 150 C206 164 188 160 178 150 C166 164 146 164 128 150 C110 164 90 164 78 150 C68 160 50 164 40 150 Z" fill="#D7C6FF" stroke="#9B85D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M62 96 C66 68 90 50 118 46" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+  <circle cx="100" cy="110" r="9" fill="#4A3347"/>
+  <path d="M94.2 111.8 Q100 116.8 105.9 111.8" fill="none" stroke="#C48DAE" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="103.2" cy="106.9" r="3.4" fill="#FFFFFF"/>
+  <circle cx="96.9" cy="113.2" r="1.8" fill="#FFFFFF"/>
+  <circle cx="104.5" cy="111.1" r="1.1" fill="#FFFFFF"/><circle cx="156" cy="110" r="9" fill="#4A3347"/>
+  <path d="M150.2 111.8 Q156 116.8 161.9 111.8" fill="none" stroke="#C48DAE" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="159.2" cy="106.9" r="3.4" fill="#FFFFFF"/>
+  <circle cx="152.9" cy="113.2" r="1.8" fill="#FFFFFF"/>
+  <circle cx="160.5" cy="111.1" r="1.1" fill="#FFFFFF"/><ellipse cx="82" cy="128" rx="11" ry="7" fill="#FF8FA9" opacity=".65"/>
+  <path d="M78 126 L76 130 M84 126 L82 130" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><ellipse cx="174" cy="128" rx="11" ry="7" fill="#FF8FA9" opacity=".65"/>
+  <path d="M170 126 L168 130 M176 126 L174 130" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".8"/><path d="M120 122 Q128 130 136 122" fill="none" stroke="#4A3347" stroke-width="3" stroke-linecap="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(190 56) scale(0.8)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="3.1" stroke-linejoin="round"/>
+</svg>

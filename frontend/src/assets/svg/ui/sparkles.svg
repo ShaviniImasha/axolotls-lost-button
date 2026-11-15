@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Sparkle cluster">
+<path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(128 128) scale(5.5)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="0.5" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(54 62) scale(3)" fill="#FFC1D6" stroke="#D9769A" stroke-width="0.8" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(206 74) scale(3.6)" fill="#D7C6FF" stroke="#9B85D9" stroke-width="0.7" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(196 198) scale(2.6)" fill="#B8F0DC" stroke="#5DBBA0" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(62 190) scale(3.2)" fill="#BDE6FF" stroke="#6DB3DE" stroke-width="0.8" stroke-linejoin="round"/>
+</svg>

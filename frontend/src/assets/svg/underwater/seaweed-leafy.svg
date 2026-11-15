@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Leafy seaweed">
+<g stroke="#5DBBA0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 240 C124 200 132 160 128 70" fill="none" stroke-width="12"/>
+    <path d="M128 210 C98 204 66 190 62 162 C92 166 118 182 128 210 Z" fill="#B8F0DC"/>
+    <path d="M128 180 C158 174 190 160 194 132 C164 136 138 152 128 180 Z" fill="#B8F0DC"/>
+    <path d="M128 150 C98 144 66 130 62 102 C92 106 118 122 128 150 Z" fill="#B8F0DC"/>
+    <path d="M128 120 C158 114 190 100 194 72 C164 76 138 92 128 120 Z" fill="#B8F0DC"/>
+    <path d="M128 92 C98 86 66 72 62 44 C92 48 118 64 128 92 Z" fill="#B8F0DC"/>
+    <path d="M128 74 C112 58 112 40 128 24 C144 40 144 58 128 74 Z" fill="#B8F0DC"/>
+  </g>
+  <ellipse cx="128" cy="242" rx="30" ry="8" fill="#8EDDC0" stroke="#5DBBA0" stroke-width="3"/>
+</svg>

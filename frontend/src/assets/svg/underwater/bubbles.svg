@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Bubble cluster">
+<circle cx="96" cy="176" r="50" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M68.5 171 A30 30 0 0 1 91 148.5" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="116" cy="196" r="3.5" fill="#FFFFFF"/>
+  <circle cx="168" cy="112" r="34" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M149.3 108.6 A20.4 20.4 0 0 1 164.6 93.3" fill="none" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="round"/>
+  <circle cx="181.6" cy="125.6" r="2.4" fill="#FFFFFF"/>
+  <circle cx="92" cy="80" r="22" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M79.9 77.8 A13.2 13.2 0 0 1 89.8 67.9" fill="none" stroke="#FFFFFF" stroke-width="3.1" stroke-linecap="round"/>
+  <circle cx="100.8" cy="88.8" r="2" fill="#FFFFFF"/>
+  <circle cx="186" cy="192" r="16" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M177.2 190.4 A9.6 9.6 0 0 1 184.4 183.2" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="192.4" cy="198.4" r="2" fill="#FFFFFF"/>
+  <circle cx="150" cy="40" r="12" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M143.4 38.8 A7.2 7.2 0 0 1 148.8 33.4" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="154.8" cy="44.8" r="2" fill="#FFFFFF"/>
+  <circle cx="60" cy="126" r="11" fill="#BDE6FF" fill-opacity=".45" stroke="#6DB3DE" stroke-width="3"/>
+  <path d="M54 124.9 A6.6 6.6 0 0 1 58.9 120" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="64.4" cy="130.4" r="2" fill="#FFFFFF"/>
+</svg>

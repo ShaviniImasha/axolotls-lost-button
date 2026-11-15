@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="home icon">
+<circle cx="48" cy="52" r="40" fill="#D9769A" opacity=".3"/>
+  <circle cx="48" cy="48" r="40" fill="#FFC1D6" stroke="#D9769A" stroke-width="3"/>
+  <path d="M22 38 Q28 22 48 17" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <defs><g id="glyph-home"><path d="M27 50 L48 31 L69 50 Z"/><rect x="34" y="49" width="28" height="17" rx="3"/></g></defs>
+  <use href="#glyph-home" fill="#D9769A" stroke="#D9769A" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+  <use href="#glyph-home" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Pink axolotl mascot">
+<!-- Tail and wavy fin -->
+  <g stroke="#D9769A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Translucent dorsal fin -->
+    <path d="M150 180 C185 170 230 185 244 212 C248 230 226 238 206 235 C186 232 170 220 158 214 Z" fill="#FF9DBE" opacity=".55"/>
+    <!-- Tail muscle -->
+    <path d="M162 202 C188 196 218 202 232 216 C235 228 220 234 204 232 C188 230 174 224 164 218 Z" fill="#FFC1D6"/>
+    
+    <!-- Feathery gills behind head -->
+    
+    <g transform="rotate(215 57.6 72.4)">
+      <!-- Main stalk -->
+      <path d="M35.6 76.4 C39.6 58.400000000000006 75.6 58.400000000000006 79.6 76.4 C71.6 84.4 43.6 84.4 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="43.6" cy="65.4" r="9" fill="#FF9DBE"/>
+      <circle cx="57.6" cy="60.400000000000006" r="11" fill="#FF9DBE"/>
+      <circle cx="71.6" cy="65.4" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="57.6" cy="70.4" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="43.6" cy="65.4" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="57.6" cy="60.400000000000006" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="71.6" cy="65.4" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-215 198.4 72.4)">
+      <!-- Main stalk -->
+      <path d="M176.4 76.4 C180.4 58.400000000000006 216.4 58.400000000000006 220.4 76.4 C212.4 84.4 184.4 84.4 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="184.4" cy="65.4" r="9" fill="#FF9DBE"/>
+      <circle cx="198.4" cy="60.400000000000006" r="11" fill="#FF9DBE"/>
+      <circle cx="212.4" cy="65.4" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="198.4" cy="70.4" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="184.4" cy="65.4" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="198.4" cy="60.400000000000006" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="212.4" cy="65.4" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(180 42 116)">
+      <!-- Main stalk -->
+      <path d="M20 120 C24 102 60 102 64 120 C56 128 28 128 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="28" cy="109" r="9" fill="#FF9DBE"/>
+      <circle cx="42" cy="104" r="11" fill="#FF9DBE"/>
+      <circle cx="56" cy="109" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="42" cy="114" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="28" cy="109" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="42" cy="104" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="56" cy="109" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-180 214 116)">
+      <!-- Main stalk -->
+      <path d="M192 120 C196 102 232 102 236 120 C228 128 200 128 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="200" cy="109" r="9" fill="#FF9DBE"/>
+      <circle cx="214" cy="104" r="11" fill="#FF9DBE"/>
+      <circle cx="228" cy="109" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="214" cy="114" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="200" cy="109" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="214" cy="104" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="228" cy="109" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(145 57.6 159.6)">
+      <!-- Main stalk -->
+      <path d="M35.6 163.6 C39.6 145.6 75.6 145.6 79.6 163.6 C71.6 171.6 43.6 171.6 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="43.6" cy="152.6" r="9" fill="#FF9DBE"/>
+      <circle cx="57.6" cy="147.6" r="11" fill="#FF9DBE"/>
+      <circle cx="71.6" cy="152.6" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="57.6" cy="157.6" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="43.6" cy="152.6" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="57.6" cy="147.6" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="71.6" cy="152.6" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-145 198.4 159.6)">
+      <!-- Main stalk -->
+      <path d="M176.4 163.6 C180.4 145.6 216.4 145.6 220.4 163.6 C212.4 171.6 184.4 171.6 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="184.4" cy="152.6" r="9" fill="#FF9DBE"/>
+      <circle cx="198.4" cy="147.6" r="11" fill="#FF9DBE"/>
+      <circle cx="212.4" cy="152.6" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="198.4" cy="157.6" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="184.4" cy="152.6" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="198.4" cy="147.6" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="212.4" cy="152.6" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+
+    <!-- Stubby back feet -->
+    <ellipse cx="96" cy="232" rx="16" ry="9" fill="#FFC1D6"/>
+    <ellipse cx="160" cy="232" rx="16" ry="9" fill="#FFC1D6"/>
+
+    <!-- Chubby belly body -->
+    <ellipse cx="128" cy="192" rx="48" ry="40" fill="#FFC1D6"/>
+    <!-- Soft cream belly patch -->
+    <ellipse cx="128" cy="204" rx="30" ry="24" fill="#FFE3EC" stroke="none"/>
+
+    <!-- Paws pose -->
+    
+        <!-- Cute paws resting on belly -->
+        <ellipse cx="86" cy="194" rx="12" ry="8" transform="rotate(-20 86 194)" fill="#FFC1D6"/>
+        <ellipse cx="170" cy="194" rx="12" ry="8" transform="rotate(20 170 194)" fill="#FFC1D6"/>
+      
+
+    <!-- Cute wide head -->
+    <ellipse cx="128" cy="116" rx="72" ry="60" fill="#FFC1D6"/>
+  </g>
+
+  <!-- Sweet forehead highlight -->
+  <path d="M84 82 Q100 66 126 62" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <circle cx="134" cy="64" r="3" fill="#FFFFFF" opacity=".65"/>
+
+      
+  <ellipse cx="84" cy="136" rx="14" ry="8" fill="#FF8FA9" opacity=".65"/>
+  <path d="M79 133 L77 139 M85 133 L83 139" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+  <ellipse cx="172" cy="136" rx="14" ry="8" fill="#FF8FA9" opacity=".65"/>
+  <path d="M167 133 L165 139 M173 133 L171 139" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+
+      
+  <circle cx="98" cy="118" r="10.5" fill="#4A3347"/>
+  <!-- Bottom soft iris crescent -->
+  <path d="M90.65 120.1 Q98 126.4 105.35 120.1" fill="none" stroke="#C48DAE" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Primary big highlight -->
+  <circle cx="101.675" cy="114.325" r="3.99" fill="#FFFFFF"/>
+  <!-- Secondary soft catchlight -->
+  <circle cx="94.325" cy="121.675" r="2.1" fill="#FFFFFF"/>
+  <!-- Tiny third sparkle -->
+  <circle cx="103.25" cy="119.575" r="1.26" fill="#FFFFFF"/>
+
+      
+  <circle cx="158" cy="118" r="10.5" fill="#4A3347"/>
+  <!-- Bottom soft iris crescent -->
+  <path d="M150.65 120.1 Q158 126.4 165.35 120.1" fill="none" stroke="#C48DAE" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Primary big highlight -->
+  <circle cx="161.675" cy="114.325" r="3.99" fill="#FFFFFF"/>
+  <!-- Secondary soft catchlight -->
+  <circle cx="154.325" cy="121.675" r="2.1" fill="#FFFFFF"/>
+  <!-- Tiny third sparkle -->
+  <circle cx="163.25" cy="119.575" r="1.26" fill="#FFFFFF"/>
+
+      <!-- Cute cat-style sweet 'ω' mouth -->
+      <path d="M117 131 Q122.5 138 128 131 Q133.5 138 139 131" fill="none" stroke="#4A3347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(168 76) scale(0.95)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.6" stroke-linejoin="round"/>
+</svg>

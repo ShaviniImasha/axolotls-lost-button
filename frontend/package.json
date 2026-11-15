@@ -1,0 +1,20 @@
+{
+  "name": "axolotls-lost-button-frontend",
+  "version": "1.0.0",
+  "description": "Frontend MVC SPA for Axolotl's Lost Button",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^13.2.0",
+    "lucide": "^1.67.0"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite --open",
+    "dev:frontend": "vite --open",
+    "dev:backend": "tsx backend/src/server.ts",
     "start": "vite --open",
+    "start:backend": "tsx backend/src/server.ts",
     "preview": "vite preview --open",
-    "server": "tsx server/index.ts",
+    "server": "tsx backend/src/server.ts",
     "typecheck": "tsc --noEmit",
+    "typecheck:all": "tsc --noEmit && tsc --project backend/tsconfig.json --noEmit && tsc --project frontend/tsconfig.json --noEmit",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run"
   },

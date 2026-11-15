@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Golden clownfish character">
+<g stroke="#E0B84F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Frilly wavy caudal fin with double scallops -->
+    <path d="M66 128 C34 92 18 88 18 106 C18 120 34 126 34 128 C34 130 18 136 18 150 C18 168 34 164 66 128 Z" fill="#FFD9B8" stroke="#E39A66" stroke-width="3"/>
+    <path d="M40 114 C28 120 28 132 40 142" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+
+    <!-- Scalloped frilly dorsal fin -->
+    <path d="M105 82 C115 54 135 50 148 62 C154 52 168 54 174 68 C166 74 158 80 150 90 Z" fill="#FFD9B8" stroke="#E39A66" stroke-width="3"/>
+    <!-- Cute ventral fin -->
+    <path d="M115 174 C125 198 145 200 156 186 C148 182 140 176 135 166 Z" fill="#FFD9B8" stroke="#E39A66" stroke-width="2.5"/>
+
+    <!-- Chubby golden fish body -->
+    <ellipse cx="136" cy="128" rx="84" ry="58" fill="#FFF0A8"/>
+
+    <!-- Signature curved clownfish white/cream stripes with soft peach outlines -->
+    <path d="M102 74 C90 98 90 158 102 182 C108 182 118 178 114 128 C118 78 108 74 102 74 Z" fill="#FFFFFF" stroke="#E39A66" stroke-width="2"/>
+    <path d="M138 72 C128 96 128 160 138 184 C144 184 152 178 148 128 C152 78 144 72 138 72 Z" fill="#FFFFFF" stroke="#E39A66" stroke-width="2"/>
+
+    <!-- Cheerful waving front pectoral fin -->
+    <ellipse cx="148" cy="142" rx="16" ry="11" transform="rotate(20 148 142)" fill="#FFD9B8" stroke="#E39A66" stroke-width="2.5"/>
+  </g>
+
+  <!-- Forehead shine curve -->
+  <path d="M118 78 Q144 68 178 76" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+
+  <!-- Face: Wide joyful eye, blushing pink cheek, cheerful open mouth with tongue -->
+  <circle cx="178" cy="116" r="11.5" fill="#4A3347"/>
+  <path d="M170.5 118.3 Q178 124.6 185.5 118.3" fill="none" stroke="#C48DAE" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="182" cy="112" r="4.4" fill="#FFFFFF"/>
+  <circle cx="174" cy="120" r="2.3" fill="#FFFFFF"/>
+  <circle cx="183.8" cy="117.4" r="1.4" fill="#FFFFFF"/>
+  <ellipse cx="180" cy="142" rx="12" ry="7" fill="#FF8FA9" opacity=".65"/>
+  <path d="M176 140 L174 144 M182 140 L180 144" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+  <!-- Cheerful open laughing mouth -->
+  <path d="M198 128 Q208 144 214 130 Z" fill="#E0587F" stroke="#4A3347" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="206" cy="133" rx="4" ry="2.5" fill="#FF9DB5"/>
+
+  <!-- Celestial sparkles & floating bubbles -->
+  <path d="M0 -10 Q2 -2 10 0 Q2 2 0 10 Q-2 2 -10 0 Q-2 -2 0 -10 Z" transform="translate(216 62) scale(0.85)" fill="#FFF0A8" stroke="#E0B84F" stroke-width="2.9" stroke-linejoin="round"/>
+  <circle cx="218" cy="106" r="4.5" fill="#FFF0A8" stroke="#E0B84F" stroke-width="1.5" opacity=".75"/>
+</svg>
