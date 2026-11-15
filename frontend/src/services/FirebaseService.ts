@@ -1,9 +1,3 @@
-/**
- * Firebase Service
- * Model-View-Controller (MVC) - Service Layer
- * Wraps Firebase initialization, Firestore access, and Auth state.
- */
-
 import { auth, db, googleProvider, isFirebaseConfigured, getFirebaseConfigStatus } from '../firebase/config';
 import type { Auth, GoogleAuthProvider } from 'firebase/auth';
 import type { Firestore } from 'firebase/firestore';

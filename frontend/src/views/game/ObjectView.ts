@@ -27,7 +27,7 @@ export class ObjectView {
                 class="hidden-object-hotspot ${visibilityClass} ${highlightClass}"
                 data-action="click-object"
                 data-object-id="${obj.id}"
-                style="left: ${obj.x}%; top: ${obj.y}%; width: ${obj.width}px; height: ${obj.height}px;"
+                style="left: ${obj.x}%; top: ${obj.y}%; width: ${obj.width}px; height: ${obj.height ?? obj.width}px;"
                 aria-label="${obj.name}"
               >
                 <img src="${assetUrl(obj.assetKey)}" class="object-asset" alt="${obj.name}" />

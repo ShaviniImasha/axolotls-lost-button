@@ -1,8 +1,3 @@
-/**
- * Express Application Setup
- * Backend Application Root
- */
-
 import express, { type Express } from 'express';
 import cors from 'cors';
 import { ENV } from './config/environment';

@@ -1,9 +1,3 @@
-/**
- * Score Service
- * Frontend Service Layer
- * Submits scores to backend REST endpoints.
- */
-
 import { ApiClient } from './apiClient';
 
 export interface ScoreSubmissionPayload {

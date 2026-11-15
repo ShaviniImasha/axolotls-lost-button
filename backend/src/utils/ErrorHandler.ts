@@ -1,8 +1,3 @@
-/**
- * Centralized Error Handler
- * Model-View-Controller (MVC) - Utility Layer
- */
-
 export class AppError extends Error {
   public readonly code: string;
   public readonly statusCode: number;

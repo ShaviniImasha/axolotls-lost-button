@@ -10,5 +10,19 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/server.ts",
+    "src/app.ts",
+    "src/config/environment.ts",
+    "src/middleware/authenticationMiddleware.ts",
+    "src/routes/authRoutes.ts",
+    "src/routes/gameRoutes.ts",
+    "src/routes/leaderboardRoutes.ts",
+    "src/routes/levelRoutes.ts",
+    "src/routes/profileRoutes.ts",
+    "src/routes/progressRoutes.ts",
+    "src/routes/puzzleRoutes.ts",
+    "src/routes/scoreRoutes.ts",
+    "src/services/FishApiService.ts"
+  ]
 }

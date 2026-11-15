@@ -1,9 +1,3 @@
-/**
- * Firebase Admin Service
- * Backend Service Layer
- * Privileged server-side Firebase Admin SDK initialization.
- */
-
 import { initializeApp, cert, getApps, type App } from 'firebase-admin/app';
 import { getAuth, type Auth } from 'firebase-admin/auth';
 import { getFirestore, type Firestore } from 'firebase-admin/firestore';

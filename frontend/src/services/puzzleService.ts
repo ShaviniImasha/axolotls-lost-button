@@ -1,9 +1,3 @@
-/**
- * Puzzle Service
- * Frontend Service Layer
- * Fetches Fish API puzzles through the backend MVC service layer.
- */
-
 import { ApiClient } from './apiClient';
 
 export interface BackendPuzzleResponse {

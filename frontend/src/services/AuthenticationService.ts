@@ -1,9 +1,3 @@
-/**
- * Authentication Service
- * Model-View-Controller (MVC) - Service Layer
- * Coordinates Firebase Auth, guest mode, and credentials handling.
- */
-
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

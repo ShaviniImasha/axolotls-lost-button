@@ -1,9 +1,3 @@
-/**
- * Game Service
- * Frontend Service Layer
- * Coordinates game session starts and chest unlocking via backend REST API.
- */
-
 import { ApiClient } from './apiClient';
 
 export interface GameSessionStartResponse {

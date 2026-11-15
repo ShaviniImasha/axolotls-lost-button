@@ -1,8 +1,3 @@
-/**
- * Score Routes
- * Model-View-Controller (MVC) - Backend Route Layer
- */
-
 import { Router } from 'express';
 import { authenticateToken, type AuthenticatedRequest } from '../middleware/authenticationMiddleware';
 

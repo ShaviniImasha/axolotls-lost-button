@@ -1,8 +1,5 @@
-/**
- * API Client
- * Frontend Service Layer
- * Coordinates REST API requests with JSON headers and Firebase Authorization tokens.
- */
+//Coordinates REST API requests with JSON headers and Firebase Authorization tokens.
+ 
 
 let authTokenGetter: (() => string | null) | null = null;
 

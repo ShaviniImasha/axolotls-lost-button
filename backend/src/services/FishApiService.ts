@@ -1,9 +1,3 @@
-/**
- * Fish API Service
- * Backend Service Layer
- * Communicates with Marc Conrad's external Fish API and validates payload responses.
- */
-
 export interface FishPuzzleData {
   imageUrl: string;
   solution: number;

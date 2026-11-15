@@ -1,9 +1,3 @@
-/**
- * Fish API Service
- * Model-View-Controller (MVC) - Service Layer
- * Encapsulates external Fish API HTTP communication, response parsing, and fallbacks.
- */
-
 import { fetchFishPuzzle, type FishPuzzle, FishApiError } from '../api/fishApi';
 import { ErrorHandler } from '../utils/ErrorHandler';
 
@@ -26,7 +20,7 @@ export class FishApiService {
     return FishApiService.instance;
   }
 
-  /** Fetch a verified puzzle from the documented Fish API. */
+  //Fetch a verified puzzle from the documented Fish API.
   public async getPuzzle(): Promise<FishPuzzle> {
     try {
       return await fetchFishPuzzle();
@@ -36,9 +30,8 @@ export class FishApiService {
     }
   }
 
-  /**
-   * Generate answer options for a given solution
-   */
+  //Generate answer options for a given solution
+   
   public generateOptions(solution: number, optionCount: 4 | 6 | 10 = 4): number[] {
     const options = new Set<number>([solution]);
     while (options.size < optionCount) {

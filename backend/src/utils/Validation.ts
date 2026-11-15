@@ -1,8 +1,3 @@
-/**
- * Validation Utility
- * Model-View-Controller (MVC) - Utility Layer
- */
-
 export interface ValidationResult {
   isValid: boolean;
   errors: Record<string, string>;
