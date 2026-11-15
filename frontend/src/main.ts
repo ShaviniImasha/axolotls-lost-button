@@ -22,7 +22,6 @@ import { settingsService } from './services/settingsService';
 import { buildLevelId, REALMS, type Difficulty } from './game/levelManager';
 import './style.css';
 import './style-pond-settings.css';
-import { initProfileController } from './controllers/ProfileController';
 
 const mount = document.querySelector<HTMLDivElement>('#app');
 if (!mount) throw new Error('The game mount point #app was not found.');
@@ -909,5 +908,4 @@ function capitalize(value: string): string {
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
-initProfileController();
 void preloadArtwork();
