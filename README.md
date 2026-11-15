@@ -52,8 +52,8 @@ Starts the Vite dev server with proxy support at `http://localhost:5173`.
 
 ### 5. Running Tests & Quality Checks
 ```sh
-npm run typecheck    # TypeScript compiler check
-npm test             # Vitest test suite (48 tests across 14 test files)
+npm run typecheck    # TypeScript compiler check (0 errors)
+npm test             # Vitest test suite (58 tests across 18 test files)
 npm run build        # Production bundle build
 ```
 
@@ -68,7 +68,8 @@ The application is structured following low coupling and high cohesion:
   - `src/services/authService.ts`: Email/password, Google OAuth, session management.
   - `src/services/firestoreService.ts`: Real-time Firestore profile and progress sync.
   - `src/services/leaderboardService.ts`: Top explorer rankings with podium styling.
-  - `src/services/audioService.ts`: Web Audio API synthesizer for sound effects and celebrations.
+  - `src/services/audioService.ts`: Web Audio API synthesizer for sound effects, ocean ambience, and celebrations.
+  - `src/services/settingsService.ts`: User preferences for sound, ambience, floating bubbles, motion, hints, and relaxed timers.
 
 - **Game Logic**:
   - `src/game/gameController.ts`: Central state manager coordinating gameplay.
@@ -76,7 +77,7 @@ The application is structured following low coupling and high cohesion:
   - `src/game/hiddenObjectManager.ts`: Deterministic per-level object placement, discovery, and duplicate prevention.
   - `src/game/puzzleManager.ts`: Live Fish API challenge handling, 0-9 answers, feedback.
   - `src/game/scoringSystem.ts`: Enforces scoring rules (+10 fish, -5 wrong, +5 find, +10 treasure, +30 win).
-  - `src/game/timerManager.ts`: Countdown timer with pause/resume and expiration callbacks.
+  - `src/game/timerManager.ts`: Countdown timer with pause/resume, bonus relaxed time, and expiration callbacks.
   - `src/game/hintManager.ts`: Difficulty-tiered hint system with golden locator ripple aura.
   - `src/game/treasureChestLogic.ts`: Interactive 3-rune combination dials, clues ledger, and button reveal.
   - `src/game/playerProgressManager.ts`: Bridges local progress with Firestore persistence.
@@ -92,7 +93,9 @@ The application is structured following low coupling and high cohesion:
   8. Hidden Treasure Chest Screen (`src/components/TreasureChestModal.ts`)
   9. Level Completion & Lost Button Screen (`src/components/LevelCompleteScreen.ts`)
   10. Leaderboard Screen (`src/components/LeaderboardScreen.ts`)
-  - Plus Pause Menu (`src/components/PauseOverlay.ts`) & Confirmation Dialogs (`src/components/ConfirmDialog.ts`).
+  11. Explorer Passport / Profile (`src/components/ProfileScreen.ts`)
+  12. Pond Settings Modal (`src/components/SettingsModal.ts`)
+  - Plus Pause Menu (`src/components/PauseOverlay.ts`), Confirmation Dialogs (`src/components/ConfirmDialog.ts`), and Cookie Consent Banner (`src/components/CookieBanner.ts`).
 
 - **Backend Express Service**:
   - `server/server.ts`: Express application with CORS and JSON body parser.
