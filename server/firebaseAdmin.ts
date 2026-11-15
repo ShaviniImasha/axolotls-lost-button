@@ -1,11 +1,18 @@
-import admin from 'firebase-admin';
+/**
+ * Firebase Admin Initializer (Modular)
+ */
+
+import { initializeApp, cert, getApps, type App } from 'firebase-admin/app';
+import { getAuth, type Auth } from 'firebase-admin/auth';
+import { getFirestore, type Firestore } from 'firebase-admin/firestore';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 let isFirebaseAdminInitialized = false;
-let adminAuth: admin.auth.Auth | null = null;
-let adminDb: admin.firestore.Firestore | null = null;
+let adminApp: App | null = null;
+let adminAuth: Auth | null = null;
+let adminDb: Firestore | null = null;
 
 const serviceAccountJson = process.env.FIREBASE_SERVICE_ACCOUNT;
 const projectId = process.env.FIREBASE_PROJECT_ID;
@@ -14,25 +21,28 @@ const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 
 try {
   if (serviceAccountJson) {
-    const cert = JSON.parse(serviceAccountJson);
-    admin.initializeApp({
-      credential: admin.credential.cert(cert),
+    const certData = JSON.parse(serviceAccountJson);
+    adminApp = initializeApp({
+      credential: cert(certData),
     });
     isFirebaseAdminInitialized = true;
   } else if (projectId && clientEmail && privateKey) {
-    admin.initializeApp({
-      credential: admin.credential.cert({
+    adminApp = initializeApp({
+      credential: cert({
         projectId,
         clientEmail,
         privateKey,
       }),
     });
     isFirebaseAdminInitialized = true;
+  } else if (getApps().length > 0) {
+    adminApp = getApps()[0];
+    isFirebaseAdminInitialized = true;
   }
 
-  if (isFirebaseAdminInitialized) {
-    adminAuth = admin.auth();
-    adminDb = admin.firestore();
+  if (isFirebaseAdminInitialized && adminApp) {
+    adminAuth = getAuth(adminApp);
+    adminDb = getFirestore(adminApp);
     console.log('Firebase Admin SDK initialized successfully.');
   } else {
     console.log('Firebase Admin SDK: Running in local emulation mode (no service account configured in .env).');
@@ -41,5 +51,4 @@ try {
   console.warn('Firebase Admin SDK initialization notice:', err);
 }
 
-export { admin, adminAuth, adminDb, isFirebaseAdminInitialized };
-
+export { adminApp, adminAuth, adminDb, isFirebaseAdminInitialized };

@@ -5,7 +5,9 @@ echo ========================================================
 echo   Pushing Axolotl's Lost Button to GitHub...
 echo ========================================================
 echo.
-git push -u origin main
+git push -u origin main > push.log 2>&1
+echo.
+type push.log
 echo.
 echo ========================================================
 echo   Finished!
