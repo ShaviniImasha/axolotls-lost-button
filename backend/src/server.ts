@@ -1,15 +1,15 @@
 /**
- * Backend Server Entry Point
+ * MVC Server Entry Point
  */
 
 import { createApp } from './app';
-import { ENV } from './config/environment';
 
+const PORT = process.env.PORT || 3001;
 const app = createApp();
 
 if (process.env.NODE_ENV !== 'test') {
-  app.listen(ENV.PORT, () => {
-    console.log(`Axolotl Backend MVC running at http://localhost:${ENV.PORT}`);
+  app.listen(PORT, () => {
+    console.log(`Axolotl MVC Server running at http://localhost:${PORT}`);
   });
 }
 

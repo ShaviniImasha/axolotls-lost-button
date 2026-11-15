@@ -1,5 +1,4 @@
 import { fetchFishPuzzle, preloadPuzzleImage, type FishPuzzle, FishApiError } from '../api/fishApi';
-import { puzzleService } from '../services/puzzleService';
 import type { DifficultySettings } from './levelManager';
 
 export type PuzzleFeedback = 'correct' | 'incorrect' | null;
@@ -66,23 +65,10 @@ export class PuzzleManager {
     this.state.answerOptions = [];
 
     try {
-      let puzzle: FishPuzzle;
-      try {
-        const backendChallenge = await puzzleService.getPuzzleChallenge(this.complexity.answerOptionCount);
-        puzzle = { imageUrl: backendChallenge.imageUrl, solution: backendChallenge.solution };
-        if (backendChallenge.options && backendChallenge.options.length > 0) {
-          this.state.answerOptions = backendChallenge.options;
-        }
-      } catch {
-        puzzle = await fetchFishPuzzle(this.abortController.signal);
-        this.state.answerOptions = this.createAnswerOptions(puzzle.solution);
-      }
-
+      const puzzle = await fetchFishPuzzle(this.abortController.signal);
       await preloadPuzzleImage(puzzle.imageUrl);
       this.state.current = puzzle;
-      if (!this.state.answerOptions || this.state.answerOptions.length === 0) {
-        this.state.answerOptions = this.createAnswerOptions(puzzle.solution);
-      }
+      this.state.answerOptions = this.createAnswerOptions(puzzle.solution);
       this.state.loading = false;
       return puzzle;
     } catch (err) {

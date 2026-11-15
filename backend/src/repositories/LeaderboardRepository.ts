@@ -1,14 +1,15 @@
 /**
  * Leaderboard Repository
- * Backend Repository Layer
- * Fetches rankings from Firestore 'scores' collection.
+ * Model-View-Controller (MVC) - Repository Layer
+ * Manages leaderboard data retrieval from Firestore with sample offline fallbacks.
  */
 
-import { getAdminDb } from '../config/firebase';
-import type { LeaderboardRankEntry } from '../models/LeaderboardModel';
-import { LeaderboardModel } from '../models/LeaderboardModel';
+import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
+import { firebaseService } from '../services/FirebaseService';
+import type { LeaderboardPlayer } from '../models/LeaderboardModel';
+import { ErrorHandler } from '../utils/ErrorHandler';
 
-const SAMPLE_PLAYERS: Array<Omit<LeaderboardRankEntry, 'rank'>> = [
+const DEFAULT_SAMPLE_PLAYERS: LeaderboardPlayer[] = [
   { playerId: 'sample-1', name: 'CoralComet', avatar: 'fish-peach', score: 320, pearls: 31, completedLevelsCount: 3 },
   { playerId: 'sample-2', name: 'BubblesAxo', avatar: 'axolotl-excited', score: 260, pearls: 27, completedLevelsCount: 3 },
   { playerId: 'sample-3', name: 'PearlSprout', avatar: 'fish-mint', score: 210, pearls: 22, completedLevelsCount: 2 },
@@ -28,31 +29,33 @@ export class LeaderboardRepository {
     return LeaderboardRepository.instance;
   }
 
-  public async getLeaderboard(limitCount = 20): Promise<LeaderboardRankEntry[]> {
-    const db = getAdminDb();
-    if (db) {
+  public async fetchLeaderboard(limitCount = 20): Promise<LeaderboardPlayer[]> {
+    const db = firebaseService.getFirestore();
+    if (firebaseService.isConfigured() && db) {
       try {
-        const snap = await db.collection('scores').orderBy('totalScore', 'desc').limit(limitCount).get();
-        if (!snap.empty) {
-          const rawEntries = snap.docs.map((docSnap: any) => {
+        const scoresRef = collection(db, 'scores');
+        const q = query(scoresRef, orderBy('totalScore', 'desc'), limit(limitCount));
+        const snapshot = await getDocs(q);
+
+        if (!snapshot.empty) {
+          return snapshot.docs.map((docSnap) => {
             const data = docSnap.data();
             return {
               playerId: docSnap.id,
-              name: data.username || 'Mysterious Explorer',
+              name: data.username || 'Mysterious Axolotl',
               avatar: data.avatar || 'axolotl-happy',
               score: data.totalScore || 0,
               pearls: data.pearls || 0,
               completedLevelsCount: data.levelsCompleted || 0,
             };
           });
-          return LeaderboardModel.rankEntries(rawEntries);
         }
       } catch (err) {
-        console.warn('[Backend LeaderboardRepository] Firestore fetch error:', err);
+        ErrorHandler.log(err, 'LeaderboardRepository.fetchLeaderboard (remote)');
       }
     }
 
-    return LeaderboardModel.rankEntries(SAMPLE_PLAYERS);
+    return [...DEFAULT_SAMPLE_PLAYERS];
   }
 }
 

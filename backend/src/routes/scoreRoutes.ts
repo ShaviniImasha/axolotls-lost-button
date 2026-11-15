@@ -1,14 +1,23 @@
 /**
  * Score Routes
- * Backend Route Layer
+ * Model-View-Controller (MVC) - Backend Route Layer
  */
 
 import { Router } from 'express';
-import { ScoreController } from '../controllers/ScoreController';
-import { authenticateToken } from '../middleware/authenticationMiddleware';
+import { authenticateToken, type AuthenticatedRequest } from '../middleware/authenticationMiddleware';
 
 export const scoreRoutes = Router();
 
-scoreRoutes.post('/submit', authenticateToken, ScoreController.submitScore);
+scoreRoutes.post('/submit', authenticateToken, (req: AuthenticatedRequest, res) => {
+  const { score, levelId, pearls } = req.body;
+  res.json({
+    success: true,
+    userId: req.user?.uid,
+    recordedScore: score,
+    levelId,
+    pearls,
+    timestamp: new Date().toISOString(),
+  });
+});
 
 export default scoreRoutes;

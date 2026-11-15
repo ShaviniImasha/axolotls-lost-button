@@ -1,19 +1,21 @@
 /**
  * Score Repository
- * Backend Repository Layer
- * Manages high score submissions in Firestore 'scores' collection.
+ * Model-View-Controller (MVC) - Repository Layer
+ * Manages player high scores, total points, and level records in Firestore and local storage.
  */
 
-import { getAdminDb } from '../config/firebase';
+import { doc, setDoc } from 'firebase/firestore';
+import { firebaseService } from '../services/FirebaseService';
+import { ErrorHandler } from '../utils/ErrorHandler';
 
-export interface ScoreRecord {
+export interface ScoreSubmission {
   userId: string;
   username: string;
   avatar: string;
+  score: number;
+  levelId: string;
   totalScore: number;
-  highestScore: number;
-  levelsCompleted: number;
-  lastUpdated: string;
+  completedLevelsCount: number;
 }
 
 export class ScoreRepository {
@@ -28,14 +30,54 @@ export class ScoreRepository {
     return ScoreRepository.instance;
   }
 
-  public async saveScore(record: ScoreRecord): Promise<void> {
-    const db = getAdminDb();
-    if (db) {
+  /**
+   * Save score entry to Firestore `scores` collection and local history
+   */
+  public async submitScore(submission: ScoreSubmission): Promise<void> {
+    try {
+      const historyKey = `axolotl_scores_${submission.userId}`;
+      const existing = JSON.parse(localStorage.getItem(historyKey) || '[]');
+      existing.push({ ...submission, submittedAt: new Date().toISOString() });
+      localStorage.setItem(historyKey, JSON.stringify(existing));
+    } catch (err) {
+      ErrorHandler.log(err, 'ScoreRepository.submitScore (local)');
+    }
+
+    const db = firebaseService.getFirestore();
+    if (firebaseService.isConfigured() && db) {
       try {
-        await db.collection('scores').doc(record.userId).set(record, { merge: true });
+        const scoreRef = doc(db, 'scores', submission.userId);
+        await setDoc(
+          scoreRef,
+          {
+            userId: submission.userId,
+            username: submission.username,
+            avatar: submission.avatar,
+            totalScore: submission.totalScore,
+            highestScore: submission.score,
+            levelsCompleted: submission.completedLevelsCount,
+            lastUpdated: new Date().toISOString(),
+          },
+          { merge: true },
+        );
       } catch (err) {
-        console.warn('[Backend ScoreRepository] Error persisting score:', err);
+        ErrorHandler.log(err, 'ScoreRepository.submitScore (remote)');
       }
+    }
+  }
+
+  /**
+   * Get best score for a specific level from local storage
+   */
+  public getLocalBestScore(userId: string, levelId: string): number {
+    try {
+      const historyKey = `axolotl_scores_${userId}`;
+      const scores = JSON.parse(localStorage.getItem(historyKey) || '[]');
+      const levelScores = scores.filter((s: { levelId: string; score: number }) => s.levelId === levelId);
+      if (levelScores.length === 0) return 0;
+      return Math.max(...levelScores.map((s: { score: number }) => s.score));
+    } catch {
+      return 0;
     }
   }
 }

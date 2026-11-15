@@ -31,7 +31,7 @@ describe('realm and difficulty levels', () => {
       expect(level.difficultySettings.timeLimit).toBe(DIFFICULTY_SETTINGS[level.difficulty].timeLimit);
     }
     expect(getLevel('pond', 'hard').difficulty).toBe('hard');
-    expect(getLevel('cave', 'easy').realm.name).toBe('Moonlit Pond');
+    expect(getLevel('cave', 'easy').realm.name).toBe('Enchanted Treasure Cave');
   });
 
   it('shares progressively harder settings across every realm', () => {

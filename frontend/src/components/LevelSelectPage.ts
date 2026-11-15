@@ -51,6 +51,7 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
             <span class="chapter-mark">THREE REALMS. THREE CHALLENGES EACH.</span>
             <h1>Where to, Pip?</h1>
             <p>Every realm can be explored at Easy, Medium, or Hard.</p>
+            <p class="level-unlock-rules">Easy opens with the first realm. Beat each realm’s Easy to open its Medium, then beat Medium to open Hard. The next realm’s Easy opens after the previous realm’s Easy.</p>
           </div>
 
           <div class="pond-selection-grid">
@@ -60,7 +61,7 @@ export function renderLevelSelectPage(props: LevelSelectPageProps): string {
               return `
                 <article class="pond-selection-card">
                   <div class="pond-selection-heading">
-                    <span class="level-num">POND 0${index + 1}</span>
+                    <span class="level-num">${realm.name.toUpperCase()} 0${index + 1}</span>
                     <div class="pond-selection-art"><img src="${assetUrl(art)}" alt=""></div>
                     <h2>${realm.name}</h2>
                     <p class="level-card-desc">${realm.subtitle}</p>

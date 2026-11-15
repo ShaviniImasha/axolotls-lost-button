@@ -76,8 +76,8 @@ export const REALMS: RealmDefinition[] = [
   },
   {
     id: 'coral',
-    name: 'Mossy Pond',
-    subtitle: 'A cozy green pond full of shy fish and hidden clues.',
+    name: 'Coral Garden',
+    subtitle: 'Colorful pastel coral formations with inquisitive reef fish.',
     theme: 'garden',
     background: 'pastel coral reef',
     accentClass: 'bay',
@@ -95,8 +95,8 @@ export const REALMS: RealmDefinition[] = [
   },
   {
     id: 'cave',
-    name: 'Moonlit Pond',
-    subtitle: 'A dreamy moonlit pond with glowing fish and secret treasures.',
+    name: 'Enchanted Treasure Cave',
+    subtitle: 'A twilight abyss shimmering with glowing crystals and cave dwellers.',
     theme: 'cave',
     background: 'twilight crystal cave',
     accentClass: 'lagoon',

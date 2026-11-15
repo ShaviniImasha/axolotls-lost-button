@@ -1,5 +1,8 @@
-import { firebaseAdminService } from '../services/FirebaseAdminService';
+/**
+ * Firebase Config Export
+ * Model-View-Controller (MVC) - Config Layer
+ * Re-exports the unified Firebase configuration and initialization.
+ */
 
-export const getAdminAuth = () => firebaseAdminService.getAuth();
-export const getAdminDb = () => firebaseAdminService.getFirestore();
-export const isFirebaseReady = () => firebaseAdminService.isReady();
+export * from '../firebase/config';
+export { firebaseService } from '../services/FirebaseService';

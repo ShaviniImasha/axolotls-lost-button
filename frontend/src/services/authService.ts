@@ -6,6 +6,10 @@ import {
   sendPasswordResetEmail,
   onAuthStateChanged,
   updateProfile,
+  updateEmail,
+  updatePassword,
+  reauthenticateWithCredential,
+  EmailAuthProvider,
   type User,
 } from 'firebase/auth';
 import { auth, googleProvider, isFirebaseConfigured, getFirebaseConfigStatus } from '../firebase/config';
@@ -403,6 +407,40 @@ export class AuthService {
     } catch {
       // storage unavailable
     }
+  }
+
+  public async updateUsername(newName: string): Promise<void> {
+    const user = auth?.currentUser;
+    if (!user) throw new Error('Not signed in.');
+    const trimmed = newName.trim();
+    if (!trimmed) throw new Error('Username cannot be empty.');
+    await updateProfile(user, { displayName: trimmed });
+    await firestoreService.updatePlayerName(user.uid, trimmed);
+    if (this.currentUser) {
+      this.currentUser = { ...this.currentUser, name: trimmed };
+      this.saveLocalUser(this.currentUser);
+    }
+  }
+
+  public async updateUserEmail(newEmail: string, currentPassword: string): Promise<void> {
+    const user = auth?.currentUser;
+    if (!user || !user.email) throw new Error('Not signed in or no email on account.');
+    const credential = EmailAuthProvider.credential(user.email, currentPassword);
+    await reauthenticateWithCredential(user, credential);
+    await updateEmail(user, newEmail.trim());
+    if (this.currentUser) {
+      this.currentUser = { ...this.currentUser, email: newEmail.trim() };
+      this.saveLocalUser(this.currentUser);
+    }
+  }
+
+  public async updateUserPassword(currentPassword: string, newPassword: string): Promise<void> {
+    const user = auth?.currentUser;
+    if (!user || !user.email) throw new Error('Not signed in or no email on account.');
+    if (newPassword.length < 6) throw new Error('New password must be at least 6 characters.');
+    const credential = EmailAuthProvider.credential(user.email, currentPassword);
+    await reauthenticateWithCredential(user, credential);
+    await updatePassword(user, newPassword);
   }
 
   private saveLocalUser(user: PlayerProfileData): void {

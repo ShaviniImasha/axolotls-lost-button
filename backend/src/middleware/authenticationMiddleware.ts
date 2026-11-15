@@ -1,11 +1,11 @@
 /**
  * Authentication Middleware
- * Backend Middleware Layer
- * Verifies incoming Firebase Bearer ID tokens.
+ * Model-View-Controller (MVC) - Middleware Layer
+ * Verifies Firebase ID tokens for protected HTTP endpoints.
  */
 
 import type { Request, Response, NextFunction } from 'express';
-import { getAdminAuth } from '../config/firebase';
+import { adminAuth, isFirebaseAdminInitialized } from '../firebase/admin';
 
 export interface AuthenticatedRequest extends Request {
   user?: {
@@ -21,7 +21,7 @@ export async function authenticateToken(
 ): Promise<void> {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    res.status(401).json({ error: 'Unauthorized: Missing or invalid token format' });
+    res.status(401).json({ error: 'Unauthorized: Missing or invalid token' });
     return;
   }
 
@@ -31,23 +31,22 @@ export async function authenticateToken(
     return;
   }
 
-  const auth = getAdminAuth();
-  if (auth) {
+  if (isFirebaseAdminInitialized && adminAuth) {
     try {
-      const decoded = await auth.verifyIdToken(token);
-      req.user = { uid: decoded.uid, email: decoded.email };
+      const decoded = await adminAuth.verifyIdToken(token);
+      req.user = {
+        uid: decoded.uid,
+        email: decoded.email,
+      };
       next();
-      return;
-    } catch {
+    } catch (error) {
       res.status(403).json({ error: 'Forbidden: Invalid or expired token' });
-      return;
     }
+  } else {
+    // Local / emulation mode fallback
+    req.user = { uid: token.startsWith('guest-') ? token : 'user_' + token.substring(0, 8), email: 'guest@pond.local' };
+    next();
   }
-
-  // Development/Emulation fallback
-  req.user = {
-    uid: token.startsWith('guest-') || token.startsWith('local_') ? token : 'user_' + token.slice(0, 8),
-    email: 'explorer@pond.local',
-  };
-  next();
 }
+
+export default authenticateToken;

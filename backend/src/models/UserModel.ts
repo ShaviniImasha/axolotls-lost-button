@@ -1,58 +1,101 @@
 /**
  * User Model
- * Backend MVC - Model Layer
+ * Model-View-Controller (MVC) - Model Layer
+ * Represents player identity, authentication profile, and account attributes.
  */
+
+import type { AssetName } from '../assets';
+import type { LevelId } from '../game/levelManager';
 
 export interface UserAttributes {
   id: string;
   email: string | null;
   displayName: string;
-  avatar: string;
+  avatar: AssetName;
   isGuest: boolean;
-  totalScore: number;
-  collectedPearls: number;
-  completedLevels: string[];
+  isOnlineUser: boolean;
   createdAt: number;
   lastLoginAt: number;
 }
 
 export class UserModel {
-  private attrs: UserAttributes;
+  private id: string;
+  private email: string | null;
+  private displayName: string;
+  private avatar: AssetName;
+  private isGuest: boolean;
+  private isOnlineUser: boolean;
+  private createdAt: number;
+  private lastLoginAt: number;
 
-  constructor(attrs: Partial<UserAttributes>) {
-    this.attrs = {
-      id: attrs.id || `user_${Date.now()}`,
-      email: attrs.email || null,
-      displayName: attrs.displayName || (attrs.email ? attrs.email.split('@')[0] : 'Bubble Explorer'),
-      avatar: attrs.avatar || 'axolotl-happy',
-      isGuest: attrs.isGuest ?? (attrs.email === null),
-      totalScore: attrs.totalScore || 0,
-      collectedPearls: attrs.collectedPearls || 0,
-      completedLevels: attrs.completedLevels || [],
-      createdAt: attrs.createdAt || Date.now(),
-      lastLoginAt: attrs.lastLoginAt || Date.now(),
-    };
+  constructor(attributes: Partial<UserAttributes> = {}) {
+    this.id = attributes.id || `guest-${Date.now()}`;
+    this.email = attributes.email || null;
+    this.displayName = attributes.displayName || (this.email ? this.email.split('@')[0] : 'Bubble Explorer');
+    this.avatar = attributes.avatar || 'axolotl-happy';
+    this.isGuest = attributes.isGuest ?? (attributes.email === null);
+    this.isOnlineUser = attributes.isOnlineUser ?? false;
+    this.createdAt = attributes.createdAt || Date.now();
+    this.lastLoginAt = attributes.lastLoginAt || Date.now();
   }
 
   public getId(): string {
-    return this.attrs.id;
+    return this.id;
   }
 
-  public getAttributes(): UserAttributes {
-    return { ...this.attrs, completedLevels: [...this.attrs.completedLevels] };
+  public getEmail(): string | null {
+    return this.email;
   }
 
-  public updateProfile(displayName?: string, avatar?: string): void {
-    if (displayName && displayName.trim()) {
-      this.attrs.displayName = displayName.trim().slice(0, 30);
+  public getDisplayName(): string {
+    return this.displayName;
+  }
+
+  public setDisplayName(name: string): void {
+    const trimmed = name.trim();
+    if (trimmed.length > 0 && trimmed.length <= 30) {
+      this.displayName = trimmed;
     }
-    if (avatar) {
-      this.attrs.avatar = avatar;
-    }
-    this.attrs.lastLoginAt = Date.now();
+  }
+
+  public getAvatar(): AssetName {
+    return this.avatar;
+  }
+
+  public setAvatar(avatar: AssetName): void {
+    this.avatar = avatar;
+  }
+
+  public getIsGuest(): boolean {
+    return this.isGuest;
+  }
+
+  public getIsOnlineUser(): boolean {
+    return this.isOnlineUser;
+  }
+
+  public setOnlineStatus(online: boolean): void {
+    this.isOnlineUser = online;
+  }
+
+  public updateLastLogin(): void {
+    this.lastLoginAt = Date.now();
   }
 
   public toJSON(): UserAttributes {
-    return this.getAttributes();
+    return {
+      id: this.id,
+      email: this.email,
+      displayName: this.displayName,
+      avatar: this.avatar,
+      isGuest: this.isGuest,
+      isOnlineUser: this.isOnlineUser,
+      createdAt: this.createdAt,
+      lastLoginAt: this.lastLoginAt,
+    };
+  }
+
+  public static fromJSON(json: Partial<UserAttributes>): UserModel {
+    return new UserModel(json);
   }
 }

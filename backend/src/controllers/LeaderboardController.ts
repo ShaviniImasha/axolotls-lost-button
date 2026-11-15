@@ -1,10 +1,37 @@
-import type { Request, Response } from 'express';
+/**
+ * Leaderboard Controller
+ * Model-View-Controller (MVC) - Controller Layer
+ * Coordinates leaderboard data fetching, difficulty filters, and rank calculations.
+ */
+
+import { LeaderboardModel, type LeaderboardFilter, type RankedLeaderboardPlayer } from '../models/LeaderboardModel';
 import { leaderboardRepository } from '../repositories/LeaderboardRepository';
 
 export class LeaderboardController {
-  public static async getLeaderboard(req: Request, res: Response): Promise<void> {
-    const limitCount = Math.min(50, Math.max(5, Number(req.query.limit) || 20));
-    const rankings = await leaderboardRepository.getLeaderboard(limitCount);
-    res.json({ leaderboard: rankings });
+  private leaderboardModel: LeaderboardModel;
+
+  constructor(leaderboardModel?: LeaderboardModel) {
+    this.leaderboardModel = leaderboardModel || new LeaderboardModel();
+  }
+
+  public async refreshLeaderboard(): Promise<RankedLeaderboardPlayer[]> {
+    const entries = await leaderboardRepository.fetchLeaderboard(50);
+    this.leaderboardModel.setEntries(entries);
+    return this.leaderboardModel.getRankedEntries();
+  }
+
+  public setFilter(filter: LeaderboardFilter): RankedLeaderboardPlayer[] {
+    this.leaderboardModel.setFilter(filter);
+    return this.leaderboardModel.getRankedEntries();
+  }
+
+  public getRankings(): RankedLeaderboardPlayer[] {
+    return this.leaderboardModel.getRankedEntries();
+  }
+
+  public getPlayerRank(playerId: string): number | null {
+    return this.leaderboardModel.getCurrentPlayerRank(playerId);
   }
 }
+
+export const leaderboardController = new LeaderboardController();

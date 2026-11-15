@@ -1,5 +1,11 @@
-import { getAdminDb } from '../config/firebase';
-import type { UserAttributes } from '../models/UserModel';
+
+
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { firebaseService } from '../services/FirebaseService';
+import { UserModel, type UserAttributes } from '../models/UserModel';
+import { ErrorHandler } from '../utils/ErrorHandler';
+
+const STORAGE_KEY = 'axolotl_user_profile';
 
 export class UserRepository {
   private static instance: UserRepository;
@@ -13,28 +19,58 @@ export class UserRepository {
     return UserRepository.instance;
   }
 
-  public async findById(userId: string): Promise<UserAttributes | null> {
-    const db = getAdminDb();
-    if (db) {
-      try {
-        const snap = await db.collection('players').doc(userId).get();
-        if (snap.exists) {
-          return snap.data() as UserAttributes;
+  /**
+   * Fetch user profile from Firestore with fallback to LocalStorage
+   */
+  public async getProfile(userId: string): Promise<UserModel | null> {
+    try {
+      const db = firebaseService.getFirestore();
+      if (firebaseService.isConfigured() && db) {
+        const docRef = doc(db, 'players', userId);
+        const snapshot = await getDoc(docRef);
+        if (snapshot.exists()) {
+          const data = snapshot.data() as Partial<UserAttributes>;
+          return UserModel.fromJSON({ ...data, id: userId, isOnlineUser: true });
         }
-      } catch (err) {
-        console.warn('[Backend UserRepository] Firestore read error:', err);
       }
+    } catch (err) {
+      ErrorHandler.log(err, 'UserRepository.getProfile (remote)');
     }
+
+    // LocalStorage fallback
+    try {
+      const raw = localStorage.getItem(`${STORAGE_KEY}_${userId}`);
+      if (raw) {
+        return UserModel.fromJSON(JSON.parse(raw));
+      }
+    } catch (err) {
+      ErrorHandler.log(err, 'UserRepository.getProfile (local)');
+    }
+
     return null;
   }
 
-  public async save(user: UserAttributes): Promise<void> {
-    const db = getAdminDb();
-    if (db) {
+  /**
+   * Save user profile to Firestore and LocalStorage
+   */
+  public async saveProfile(user: UserModel): Promise<void> {
+    const data = user.toJSON();
+
+    // Always cache locally
+    try {
+      localStorage.setItem(`${STORAGE_KEY}_${user.getId()}`, JSON.stringify(data));
+    } catch (err) {
+      ErrorHandler.log(err, 'UserRepository.saveProfile (local)');
+    }
+
+    // Persist to Firestore if online
+    const db = firebaseService.getFirestore();
+    if (firebaseService.isConfigured() && db && !user.getIsGuest()) {
       try {
-        await db.collection('players').doc(user.id).set(user, { merge: true });
+        const docRef = doc(db, 'players', user.getId());
+        await setDoc(docRef, data, { merge: true });
       } catch (err) {
-        console.warn('[Backend UserRepository] Firestore write error:', err);
+        ErrorHandler.log(err, 'UserRepository.saveProfile (remote)');
       }
     }
   }

@@ -1,5 +1,6 @@
 /**
- * Firebase Admin Initializer (Modular)
+ * Firebase Admin Initializer
+ * Provides Firebase Admin SDK instances for backend middleware.
  */
 
 import { initializeApp, cert, getApps, type App } from 'firebase-admin/app';
@@ -22,17 +23,11 @@ const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 try {
   if (serviceAccountJson) {
     const certData = JSON.parse(serviceAccountJson);
-    adminApp = initializeApp({
-      credential: cert(certData),
-    });
+    adminApp = initializeApp({ credential: cert(certData) });
     isFirebaseAdminInitialized = true;
   } else if (projectId && clientEmail && privateKey) {
     adminApp = initializeApp({
-      credential: cert({
-        projectId,
-        clientEmail,
-        privateKey,
-      }),
+      credential: cert({ projectId, clientEmail, privateKey }),
     });
     isFirebaseAdminInitialized = true;
   } else if (getApps().length > 0) {

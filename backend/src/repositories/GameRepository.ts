@@ -1,14 +1,15 @@
 /**
  * Game Repository
- * Backend Repository Layer
- * Manages active session memory and persistence.
+ * Model-View-Controller (MVC) - Repository Layer
+ * Manages game session state persistence.
  */
 
-import type { GameSession } from '../models/GameModel';
+import type { GameSessionState } from '../models/GameModel';
+
+const SESSION_STORAGE_KEY = 'axolotl_game_session';
 
 export class GameRepository {
   private static instance: GameRepository;
-  private sessions = new Map<string, GameSession>();
 
   private constructor() {}
 
@@ -19,16 +20,29 @@ export class GameRepository {
     return GameRepository.instance;
   }
 
-  public save(session: GameSession): void {
-    this.sessions.set(session.sessionId, session);
+  public saveActiveSession(state: GameSessionState): void {
+    try {
+      sessionStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(state));
+    } catch {
+      // Storage unavailable or disabled
+    }
   }
 
-  public findById(sessionId: string): GameSession | undefined {
-    return this.sessions.get(sessionId);
+  public getActiveSession(): GameSessionState | null {
+    try {
+      const raw = sessionStorage.getItem(SESSION_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
   }
 
-  public remove(sessionId: string): void {
-    this.sessions.delete(sessionId);
+  public clearActiveSession(): void {
+    try {
+      sessionStorage.removeItem(SESSION_STORAGE_KEY);
+    } catch {
+      // Ignore
+    }
   }
 }
 

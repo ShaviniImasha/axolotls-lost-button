@@ -1,19 +1,15 @@
 /**
  * Progress Repository
- * Backend Repository Layer
- * Manages player progression in Firestore 'playerProgress' collection.
+ * Model-View-Controller (MVC) - Repository Layer
+ * Manages player progression, completed levels, and pearls across Firestore and local storage.
  */
 
-import { getAdminDb } from '../config/firebase';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { firebaseService } from '../services/FirebaseService';
+import type { ProgressState } from '../models/ProgressModel';
+import { ErrorHandler } from '../utils/ErrorHandler';
 
-export interface ProgressRecord {
-  userId: string;
-  currentLevel: string;
-  completedLevels: string[];
-  collectedRewards: { pearls: number };
-  totalScore: number;
-  lastUpdated: string;
-}
+const STORAGE_PREFIX = 'axolotl_progress_';
 
 export class ProgressRepository {
   private static instance: ProgressRepository;
@@ -27,28 +23,70 @@ export class ProgressRepository {
     return ProgressRepository.instance;
   }
 
-  public async getProgress(userId: string): Promise<ProgressRecord | null> {
-    const db = getAdminDb();
-    if (db) {
+  /**
+   * Load player progress from Firestore with local fallback
+   */
+  public async loadProgress(userId: string): Promise<Partial<ProgressState> | null> {
+    const db = firebaseService.getFirestore();
+    if (firebaseService.isConfigured() && db) {
       try {
-        const snap = await db.collection('playerProgress').doc(userId).get();
-        if (snap.exists) {
-          return snap.data() as ProgressRecord;
+        const docRef = doc(db, 'playerProgress', userId);
+        const snap = await getDoc(docRef);
+        if (snap.exists()) {
+          const data = snap.data();
+          return {
+            currentLevel: data.currentLevel,
+            completedLevels: data.completedLevels,
+            collectedPearls: data.collectedRewards?.pearls,
+            totalScore: data.totalScore,
+          };
         }
       } catch (err) {
-        console.warn('[Backend ProgressRepository] Error loading progress:', err);
+        ErrorHandler.log(err, 'ProgressRepository.loadProgress (remote)');
       }
     }
+
+    try {
+      const raw = localStorage.getItem(`${STORAGE_PREFIX}${userId}`);
+      if (raw) return JSON.parse(raw);
+    } catch (err) {
+      ErrorHandler.log(err, 'ProgressRepository.loadProgress (local)');
+    }
+
     return null;
   }
 
-  public async saveProgress(record: ProgressRecord): Promise<void> {
-    const db = getAdminDb();
-    if (db) {
+  /**
+   * Save player progress to Firestore and local storage
+   */
+  public async saveProgress(userId: string, state: ProgressState): Promise<void> {
+    try {
+      localStorage.setItem(`${STORAGE_PREFIX}${userId}`, JSON.stringify(state));
+    } catch (err) {
+      ErrorHandler.log(err, 'ProgressRepository.saveProgress (local)');
+    }
+
+    const db = firebaseService.getFirestore();
+    if (firebaseService.isConfigured() && db) {
       try {
-        await db.collection('playerProgress').doc(record.userId).set(record, { merge: true });
+        const docRef = doc(db, 'playerProgress', userId);
+        await setDoc(
+          docRef,
+          {
+            userId,
+            currentLevel: state.currentLevel,
+            completedLevels: state.completedLevels,
+            collectedRewards: {
+              pearls: state.collectedPearls,
+            },
+            totalLevelsCompleted: state.completedLevels.length,
+            totalScore: state.totalScore,
+            lastUpdated: new Date().toISOString(),
+          },
+          { merge: true },
+        );
       } catch (err) {
-        console.warn('[Backend ProgressRepository] Error saving progress:', err);
+        ErrorHandler.log(err, 'ProgressRepository.saveProgress (remote)');
       }
     }
   }
