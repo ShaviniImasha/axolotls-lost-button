@@ -13,6 +13,7 @@ import levelRoutes from './routes/levelRoutes';
 import puzzleRoutes from './routes/puzzleRoutes';
 import leaderboardRoutes from './routes/leaderboardRoutes';
 import profileRoutes from './routes/profileRoutes';
+import progressRoutes from './routes/progressRoutes';
 
 export function createApp(): Express {
   const app = express();
@@ -37,6 +38,7 @@ export function createApp(): Express {
   app.use('/api/puzzles', puzzleRoutes);
   app.use('/api/leaderboard', leaderboardRoutes);
   app.use('/api/profile', profileRoutes);
+  app.use('/api/progress', progressRoutes);
 
   return app;
 }

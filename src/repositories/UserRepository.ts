@@ -1,8 +1,4 @@
-/**
- * User Repository
- * Model-View-Controller (MVC) - Repository Layer
- * Manages player profile persistence across Firestore and local storage.
- */
+
 
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { firebaseService } from '../services/FirebaseService';
@@ -14,7 +10,7 @@ const STORAGE_KEY = 'axolotl_user_profile';
 export class UserRepository {
   private static instance: UserRepository;
 
-  private constructor() {}
+  private constructor() { }
 
   public static getInstance(): UserRepository {
     if (!UserRepository.instance) {
