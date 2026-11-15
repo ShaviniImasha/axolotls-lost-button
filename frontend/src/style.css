@@ -6340,6 +6340,37 @@ input:focus-visible {
 .trail-pearl b { position: absolute; top: 1px; right: 0; display: grid; place-items: center; width: 14px; height: 14px; border: 1px solid #fff9eb; border-radius: 50%; background: #72bd83; color: white; font-size: .58rem; line-height: 1; }
 .trail-pearl b.trail-done::before { content: ""; position: absolute; left: 5px; top: 2px; width: 4px; height: 7px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
 
+@media (max-width: 900px) {
+  .lobby-hud { right: 20px; left: 20px; }
+  .lobby-counter { min-width: 92px; padding-inline: 9px; }
+  .lobby-profile-button { min-width: 48px; width: 48px; padding-inline: 8px; }
+  .lobby-profile-button span { display: none; }
+  .lobby-greeting { left: 32px; }
+  .pond-map { left: 24px; transform: scale(.88); transform-origin: top left; }
+  .adventure-panel { right: 24px; width: min(360px, 42vw); }
+  .treasure-trail-card { left: 24px; right: 24px; }
+  .trail-content { width: min(480px, calc(100vw - 220px)); }
+}
+
+@media (max-width: 680px) {
+  .lobby-hud { top: 12px; min-height: 58px; }
+  .lobby-avatar { width: 48px; height: 48px; border-width: 3px; }
+  .lobby-avatar img { width: 38px; height: 38px; }
+  .lobby-player-copy strong { max-width: 90px; overflow: hidden; font-size: 1rem; text-overflow: ellipsis; white-space: nowrap; }
+  .lobby-player-copy span { font-size: .6rem; }
+  .lobby-hud-actions { gap: 6px; }
+  .lobby-counter { min-width: 44px; min-height: 42px; gap: 3px; padding: 4px 6px; }
+  .lobby-counter img { width: 24px; height: 24px; }
+  .lobby-counter strong { font-size: .95rem; }
+  .lobby-counter small { font-size: .46rem; }
+  .lobby-greeting { top: 82px; left: 20px; right: 20px; }
+  .lobby-greeting h1 { font-size: clamp(1.7rem, 8vw, 2.3rem); }
+  .lobby-greeting p { font-size: .82rem; }
+  .pond-map { top: 196px; left: 8px; transform: scale(.66); }
+  .adventure-panel { top: 420px; right: 20px; left: 20px; width: auto; }
+  .treasure-trail-card { display: none; }
+}
+
 .lobby-goal {
   position: absolute;
   z-index: 6;

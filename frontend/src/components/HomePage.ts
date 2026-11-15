@@ -36,6 +36,8 @@ export function renderHomePage(props: HomePageProps): string {
     (player.collectedClues ?? []).filter((id) => id.startsWith(`${selectedLevel.id}-clue-`)).length,
   );
   const completedCount = completedLevels.length;
+  const pearlCount = player.collectedPearls ?? 0;
+  const score = player.totalScore ?? 0;
   const levelStatus = isComplete ? 'Done' : isUnlocked ? 'New' : 'Locked';
   const statusLabel = isComplete ? 'Done!' : isUnlocked ? 'New adventure' : 'Unlock this level first';
   const playLabel = hasActiveRun ? 'Keep Exploring!' : "Let's Play!";
@@ -61,15 +63,15 @@ export function renderHomePage(props: HomePageProps): string {
             </div>
           </div>
           <div class="lobby-hud-actions">
-            <div class="lobby-counter" aria-label="${player.collectedPearls || 0} pearls">
+            <div class="lobby-counter" aria-label="${pearlCount} ${pearlCount === 1 ? 'pearl' : 'pearls'}">
               <img src="${assetUrl('pearl')}" alt="">
-              <span><small>PEARLS</small><strong>${player.collectedPearls || 0}</strong></span>
+              <span><small>PEARLS</small><strong>${pearlCount}</strong></span>
             </div>
-            <div class="lobby-counter lobby-score" aria-label="${player.totalScore || 0} score">
+            <div class="lobby-counter lobby-score" aria-label="${score} ${score === 1 ? 'point' : 'points'}">
               <img src="${assetUrl('star-gold')}" alt="">
-              <span><small>Score</small><strong>${player.totalScore || 0}</strong></span>
+              <span><small>SCORE</small><strong>${score}</strong></span>
             </div>
-            <button class="lobby-profile-button" data-action="go-profile">
+            <button class="lobby-profile-button" data-action="go-profile" aria-label="Open profile">
               <img src="${assetUrl('profile-icon')}" alt="" class="lobby-profile-icon"><span>Profile</span>
             </button>
           </div>
