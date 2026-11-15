@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper: checks if request is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper: checks if authenticated user is the owner of the document
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Players Collection
+    // Each player can read and write only their own account & profile document
+    match /players/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId)
+                    && request.resource.data.userId == request.auth.uid
+                    && request.resource.data.username is string
+                    && request.resource.data.username.size() >= 2;
+      allow update: if isOwner(userId)
+                    && request.resource.data.userId == resource.data.userId;
+      allow delete: if false; // Disallow deletion from client
+    }
+
+    // 2. Player Progress Collection
+    // Stores individual game progress; strictly private to the authenticated owner
+    match /playerProgress/{userId} {
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId)
+                            && request.resource.data.userId == request.auth.uid;
+      allow delete: if false;
+    }
+
+    // 3. Scores Collection
+    // Publicly readable so players can view rankings on the Leaderboard.
+    // Only the authenticated owner can write/update their own score.
+    match /scores/{userId} {
+      allow read: if true;
+      allow create, update: if isOwner(userId)
+                            && request.resource.data.userId == request.auth.uid
+                            && request.resource.data.totalScore is number
+                            && request.resource.data.totalScore >= 0;
+      allow delete: if false;
+    }
+
+    // 4. Achievements Collection
+    // Multiple achievements per user. Owner can read their own achievements and write unlocked milestones.
+    match /achievements/{achievementDocId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow create, update: if isAuthenticated()
+                            && request.resource.data.userId == request.auth.uid
+                            && request.resource.data.achievementName is string;
+      allow delete: if false;
+    }
+  }
+}
+

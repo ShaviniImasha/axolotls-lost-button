@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Happy gold star">
+<polygon points="128,45 152.1,102.8 214.5,107.9 167.1,148.7 181.5,209.6 128,177.1 74.5,209.6 88.9,148.7 41.5,107.9 103.9,102.8" fill="#E0B84F" stroke="#E0B84F" stroke-width="32" stroke-linejoin="round"/><polygon points="128,45 152.1,102.8 214.5,107.9 167.1,148.7 181.5,209.6 128,177.1 74.5,209.6 88.9,148.7 41.5,107.9 103.9,102.8" fill="#FFF0A8" stroke="#FFF0A8" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M92 92 Q110 66 138 64" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity=".65"/>
+  <circle cx="108" cy="140" r="8" fill="#4A3347"/><circle cx="148" cy="140" r="8" fill="#4A3347"/>
+  <circle cx="110.8" cy="137" r="2.9" fill="#FFFFFF"/><circle cx="150.8" cy="137" r="2.9" fill="#FFFFFF"/>
+  <ellipse cx="92" cy="158" rx="10" ry="6" fill="#FF8FA9" opacity=".55"/><ellipse cx="164" cy="158" rx="10" ry="6" fill="#FF8FA9" opacity=".55"/>
+  <path d="M120 156 Q128 166 136 156" fill="none" stroke="#4A3347" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

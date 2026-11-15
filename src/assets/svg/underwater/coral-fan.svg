@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Lavender fan coral">
+<path d="M128 236 L128 186" fill="none" stroke="#9B85D9" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 236 L128 186" fill="none" stroke="#D7C6FF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 190 C62 180 28 130 40 82 C46 62 68 58 82 66 C92 48 116 44 128 58 C140 44 164 48 174 66 C188 58 210 62 216 82 C228 130 194 180 128 190 Z" fill="#D7C6FF" stroke="#9B85D9" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="none" stroke="#BBA5F5" stroke-width="5" stroke-linecap="round">
+    <path d="M128 186 C128 140 128 100 128 66"/>
+    <path d="M122 182 C100 150 80 118 70 84"/>
+    <path d="M134 182 C156 150 176 118 186 84"/>
+    <path d="M114 186 C84 164 58 136 48 100"/>
+    <path d="M142 186 C172 164 198 136 208 100"/>
+  </g>
+  <path d="M74 80 Q96 62 118 66" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <ellipse cx="128" cy="240" rx="42" ry="9" fill="#BBA5F5" stroke="#9B85D9" stroke-width="3"/>
+</svg>

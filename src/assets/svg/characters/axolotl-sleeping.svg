@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Sleeping axolotl">
+<!-- Tail and wavy fin -->
+  <g stroke="#D9769A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Translucent dorsal fin -->
+    <path d="M150 180 C185 170 230 185 244 212 C248 230 226 238 206 235 C186 232 170 220 158 214 Z" fill="#FF9DBE" opacity=".55"/>
+    <!-- Tail muscle -->
+    <path d="M162 202 C188 196 218 202 232 216 C235 228 220 234 204 232 C188 230 174 224 164 218 Z" fill="#FFC1D6"/>
+    
+    <!-- Feathery gills behind head -->
+    
+    <g transform="rotate(170 54.9 84.4)">
+      <!-- Main stalk -->
+      <path d="M32.9 88.4 C36.9 70.4 72.9 70.4 76.9 88.4 C68.9 96.4 40.9 96.4 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="40.9" cy="77.4" r="9" fill="#FF9DBE"/>
+      <circle cx="54.9" cy="72.4" r="11" fill="#FF9DBE"/>
+      <circle cx="68.9" cy="77.4" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="54.9" cy="82.4" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="40.9" cy="77.4" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="54.9" cy="72.4" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="68.9" cy="77.4" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-170 201.1 84.4)">
+      <!-- Main stalk -->
+      <path d="M179.1 88.4 C183.1 70.4 219.1 70.4 223.1 88.4 C215.1 96.4 187.1 96.4 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="187.1" cy="77.4" r="9" fill="#FF9DBE"/>
+      <circle cx="201.1" cy="72.4" r="11" fill="#FF9DBE"/>
+      <circle cx="215.1" cy="77.4" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="201.1" cy="82.4" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="187.1" cy="77.4" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="201.1" cy="72.4" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="215.1" cy="77.4" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(150 44.1 124)">
+      <!-- Main stalk -->
+      <path d="M22.1 128 C26.1 110 62.1 110 66.1 128 C58.1 136 30.1 136 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="30.1" cy="117" r="9" fill="#FF9DBE"/>
+      <circle cx="44.1" cy="112" r="11" fill="#FF9DBE"/>
+      <circle cx="58.1" cy="117" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="44.1" cy="122" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="30.1" cy="117" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="44.1" cy="112" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="58.1" cy="117" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-150 211.9 124)">
+      <!-- Main stalk -->
+      <path d="M189.9 128 C193.9 110 229.9 110 233.9 128 C225.9 136 197.9 136 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="197.9" cy="117" r="9" fill="#FF9DBE"/>
+      <circle cx="211.9" cy="112" r="11" fill="#FF9DBE"/>
+      <circle cx="225.9" cy="117" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="211.9" cy="122" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="197.9" cy="117" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="211.9" cy="112" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="225.9" cy="117" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(128 60.8 163)">
+      <!-- Main stalk -->
+      <path d="M38.8 167 C42.8 149 78.8 149 82.8 167 C74.8 175 46.8 175 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="46.8" cy="156" r="9" fill="#FF9DBE"/>
+      <circle cx="60.8" cy="151" r="11" fill="#FF9DBE"/>
+      <circle cx="74.8" cy="156" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="60.8" cy="161" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="46.8" cy="156" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="60.8" cy="151" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="74.8" cy="156" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+    <g transform="rotate(-128 195.2 163)">
+      <!-- Main stalk -->
+      <path d="M173.2 167 C177.2 149 213.2 149 217.2 167 C209.2 175 181.2 175 Z" fill="#FF9DBE"/>
+      <!-- Fluffy rounded lobes -->
+      <circle cx="181.2" cy="156" r="9" fill="#FF9DBE"/>
+      <circle cx="195.2" cy="151" r="11" fill="#FF9DBE"/>
+      <circle cx="209.2" cy="156" r="9" fill="#FF9DBE"/>
+      <!-- Soft inner glow -->
+      <ellipse cx="195.2" cy="161" rx="14" ry="5" fill="#FFC1D6" opacity=".85"/>
+      <circle cx="181.2" cy="156" r="4" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="195.2" cy="151" r="5" fill="#FFC1D6" opacity=".75"/>
+      <circle cx="209.2" cy="156" r="4" fill="#FFC1D6" opacity=".75"/>
+    </g>
+
+    <!-- Stubby back feet -->
+    <ellipse cx="96" cy="232" rx="16" ry="9" fill="#FFC1D6"/>
+    <ellipse cx="160" cy="232" rx="16" ry="9" fill="#FFC1D6"/>
+
+    <!-- Chubby belly body -->
+    <ellipse cx="128" cy="192" rx="48" ry="40" fill="#FFC1D6"/>
+    <!-- Soft cream belly patch -->
+    <ellipse cx="128" cy="204" rx="30" ry="24" fill="#FFE3EC" stroke="none"/>
+
+    <!-- Paws pose -->
+    
+        <!-- Cute paws resting on belly -->
+        <ellipse cx="86" cy="194" rx="12" ry="8" transform="rotate(-20 86 194)" fill="#FFC1D6"/>
+        <ellipse cx="170" cy="194" rx="12" ry="8" transform="rotate(20 170 194)" fill="#FFC1D6"/>
+      
+
+    <!-- Cute wide head -->
+    <ellipse cx="128" cy="116" rx="72" ry="60" fill="#FFC1D6"/>
+  </g>
+
+  <!-- Sweet forehead highlight -->
+  <path d="M84 82 Q100 66 126 62" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <circle cx="134" cy="64" r="3" fill="#FFFFFF" opacity=".65"/>
+
+      
+  <ellipse cx="84" cy="136" rx="14" ry="8" fill="#FF8FA9" opacity=".65"/>
+  <path d="M79 133 L77 139 M85 133 L83 139" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+  <ellipse cx="172" cy="136" rx="14" ry="8" fill="#FF8FA9" opacity=".65"/>
+  <path d="M167 133 L165 139 M173 133 L171 139" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+
+      <!-- Peaceful sleeping curved eyes -->
+      <path d="M88 121 Q98 131 108 121 M148 121 Q158 131 168 121" fill="none" stroke="#4A3347" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Tiny cute resting mouth -->
+      <path d="M122 136 Q128 141 134 136" fill="none" stroke="#4A3347" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- Kawaii translucent sleeping bubble -->
+      <circle cx="148" cy="138" r="9" fill="#BDE6FF" stroke="#6DB3DE" stroke-width="2" opacity=".85"/>
+      <ellipse cx="145" cy="134" rx="3" ry="1.8" fill="#FFFFFF" opacity=".8"/>
+      <!-- Soft lavender floating Zzz -->
+      <path d="M176 46 H190 L176 60 H190" fill="none" stroke="#9B85D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M198 24 H210 L198 36 H210" fill="none" stroke="#9B85D9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

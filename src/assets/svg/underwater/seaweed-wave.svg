@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Mint wavy seaweed">
+<path d="M128 240 C100 210 156 190 128 160 C102 132 154 112 128 86 C114 72 122 56 132 44" fill="none" stroke="#5DBBA0" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M128 240 C100 210 156 190 128 160 C102 132 154 112 128 86 C114 72 122 56 132 44" fill="none" stroke="#B8F0DC" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M122 226 C108 206 140 188 124 168" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <path d="M122 200 C96 194 78 178 74 156" fill="none" stroke="#5DBBA0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M122 200 C96 194 78 178 74 156" fill="none" stroke="#B8F0DC" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M134 134 C160 128 178 112 182 90" fill="none" stroke="#5DBBA0" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M134 134 C160 128 178 112 182 90" fill="none" stroke="#B8F0DC" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="128" cy="242" rx="34" ry="8" fill="#8EDDC0" stroke="#5DBBA0" stroke-width="3"/>
+</svg>

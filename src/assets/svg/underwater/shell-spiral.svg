@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Butter spiral shell">
+<g stroke="#E0B84F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 190 C30 170 34 132 62 122 C74 82 128 62 168 84 C206 100 218 150 196 184 C178 214 120 226 84 214 C74 210 66 202 60 190 Z" fill="#FFF0A8"/>
+    <path d="M60 190 C90 196 120 188 138 168 C156 148 150 112 122 108" fill="none" stroke="#FFE070" stroke-width="12"/>
+    <path d="M122 108 C100 108 92 126 100 140" fill="none" stroke="#FFE070" stroke-width="10"/>
+  </g>
+  <path d="M92 94 Q118 74 152 84" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity=".7"/>
+  <circle cx="160" cy="172" r="6" fill="#4A3347"/>
+  <path d="M156.1 173.2 Q160 176.5 163.9 173.2" fill="none" stroke="#C48DAE" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="162.1" cy="169.9" r="2.3" fill="#FFFFFF"/>
+  <circle cx="157.9" cy="174.1" r="1.2" fill="#FFFFFF"/>
+  <circle cx="163" cy="172.7" r="0.7" fill="#FFFFFF"/><path d="M170 186 Q176 192 182 186" fill="none" stroke="#4A3347" stroke-width="3" stroke-linecap="round"/><ellipse cx="150" cy="186" rx="8" ry="5" fill="#FF8FA9" opacity=".65"/>
+  <path d="M146 184 L144 188 M152 184 L150 188" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+</svg>

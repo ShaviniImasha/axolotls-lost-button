@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="hint icon">
+<circle cx="48" cy="52" r="40" fill="#E0B84F" opacity=".3"/>
+  <circle cx="48" cy="48" r="40" fill="#FFF0A8" stroke="#E0B84F" stroke-width="3"/>
+  <path d="M22 38 Q28 22 48 17" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  <defs><g id="glyph-hint"><path d="M48 28 C38 28 32 36 34 45 C35 51 41 54 41 60 H55 C55 54 61 51 62 45 C64 36 58 28 48 28 Z"/><rect x="42" y="65" width="12" height="3" rx="1.5"/></g></defs>
+  <use href="#glyph-hint" fill="#E0B84F" stroke="#E0B84F" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+  <use href="#glyph-hint" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
