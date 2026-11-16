@@ -1,6 +1,9 @@
+// Import services used for authentication, audio, leaderboard and game settings.
 import { authService, type PlayerProfileData } from '../services/authService';
 import { audioService } from '../services/audioService';
 import { leaderboardService, type RankedLeaderboardEntry } from '../services/leaderboardService';
+
+// Import managers that handle different parts of the game.
 import { LevelManager, type AdventureLevelDefinition, type Difficulty, type LevelId } from './levelManager';
 import { HiddenObjectManager } from './hiddenObjectManager';
 import { PuzzleManager } from './puzzleManager';
@@ -11,6 +14,7 @@ import { HintManager } from './hintManager';
 import { TreasureChestLogic } from './treasureChestLogic';
 import { playerProgressManager } from './playerProgressManager';
 
+// Defines all the screens that the player can navigate to in the game.
 export type ScreenState =
   | 'landing'
   | 'login'
@@ -22,6 +26,8 @@ export type ScreenState =
   | 'leaderboard'
   | 'profile';
 
+// Stores the current game information, including player details,
+// selected level, score, timer, hints, overlays and leaderboard data.
 export interface ControllerState {
   currentScreen: ScreenState;
   isFishOverlayOpen: boolean;
