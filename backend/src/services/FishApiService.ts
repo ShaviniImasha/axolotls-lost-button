@@ -50,9 +50,8 @@ export class FishApiService {
     }
   }
 
-  /**
-   * Generate multiple choice options including the correct solution
-   */
+  //Generate multiple choice options including the correct solution
+   
   public generateOptions(solution: number, count = 4): number[] {
     const options = new Set<number>([solution]);
     while (options.size < count) {
